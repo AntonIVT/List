@@ -5,17 +5,255 @@
 
 static List_error ListVerify(struct List *lst);
 
-static List_error ListResize(struct List *lst, long long new_cap);
+static List_error ListResize(struct List *lst, size_t new_cap);
 
-static int FindArrayNumber(struct List *lst, long long logic_number);
+static long long FindArrayNumber(struct List *lst, long long logic_number);
 
 static List_error ListInsert_Internal(struct List *lst, List_El x, long long array_number);
 
 static List_error ListErase_Internal(struct List *lst, long long array_number);
 
+static char isIteratorValid(struct List *lst, List_Iterator iter);
+
 #define DEBUG_MODE
 
-List_error ListConstruct(struct List *lst, long long capacity)
+static List_error ListVerify(struct List *lst)
+{
+    if (lst->data == NULL)
+    {
+        printf("Ban because lst-data == NULL\n");
+        return LIST_ERROR;
+    }
+    if (lst->size > lst->capacity)
+    {
+        printf("Ban because of overflow\n");
+        return LIST_OVERFLOW;
+    }
+    if (lst->size < 0)
+    {
+        printf("Ban because of underflow\n");
+        return LIST_UNDERFLOW;
+    }
+    
+    #ifdef DEBUG_MODE
+    if (lst->head != -1)
+    {
+        int curr_node = lst->data[lst->head].next;
+        int logic_number = 1;
+        while (curr_node != lst->head && logic_number < lst->size)
+        {
+            curr_node = lst->data[curr_node].next;
+            logic_number++;
+        }
+        if (logic_number != lst->size)
+        {
+            printf("There's cycle in upstream way\n");
+            ListDump(lst);
+            return LIST_CYCLE;
+        }
+        curr_node = lst->data[lst->head].prev;
+        logic_number = 1;
+        while (curr_node != lst->head && logic_number < lst->size)
+        {
+            curr_node = lst->data[curr_node].prev;
+            logic_number++;
+        }
+        if (logic_number != lst->size)
+        {
+            printf("There's cycle in reverse way\n");
+            ListDump(lst);
+            return LIST_CYCLE;
+        }
+    }
+    if (lst->free != -1)
+    {
+        int curr_node = lst->free;
+        int logic_number = 0;
+        while (curr_node != -1 && logic_number < lst->capacity - lst->size)
+        {
+            curr_node = lst->data[curr_node].next;
+            logic_number++;    
+        }
+        if (logic_number != lst->capacity - lst->size)
+        {
+            printf("There's cycle in free places\n");
+            ListDump(lst);
+            return LIST_CYCLE;
+        }
+    }
+    #endif
+    
+    return LIST_OK;
+}
+
+static char isIteratorValid(struct List *lst, List_Iterator iter)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return 0;
+    
+    if (iter < 0 || iter >= lst->capacity || lst->data[iter].prev == -1)
+    {   
+        printf("Wrong iterator\n");
+        ListDump(lst);
+        return 0;
+    }
+    else
+        return 1;
+}
+
+static List_error ListResize(struct List *lst, size_t new_cap)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return LIST_ERROR;
+        
+    if (new_cap < lst->size || 
+       (lst->boost_mode == 0 && new_cap <= lst->capacity) || 
+       (lst->boost_mode == 1 && new_cap < lst->size))
+        return LIST_ERROR; 
+    
+    struct Node *new_data = (struct Node *)realloc(lst->data, new_cap * sizeof(struct Node));
+    
+    if (new_data == NULL)
+        return LIST_WRONG_REALLOC;
+    
+    lst->data = new_data;
+    
+    if (new_cap == lst->size)
+    {
+        lst->capacity = new_cap;
+        return LIST_OK;
+    }
+    
+    int last_free = lst->free;
+    if (last_free == -1)
+        lst->free = lst->capacity;
+    else    
+    {
+        while(lst->data[last_free].next != -1)
+            last_free = lst->data[last_free].next;
+        
+        lst->data[last_free].next = lst->capacity;
+    }
+    for (int i = lst->capacity; i < new_cap - 1; i++)
+    {
+        struct Node free_node = {-1, -1, i + 1};
+        lst->data[i] = free_node;
+    }
+    struct Node last_node = {-1, -1, -1};
+    lst->data[new_cap - 1] = last_node;
+        
+    lst->capacity = new_cap;
+    return LIST_OK;
+}
+
+static long long FindArrayNumber(struct List *lst, long long logic_number)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    if (logic_number >= lst->size || logic_number < 0)
+        return -1;
+    
+    int array_number = lst->head; 
+    
+    for (int i = 0; i < logic_number; i++)
+        array_number = lst->data[array_number].next;
+    
+    return array_number;
+}
+
+static List_error ListInsert_Internal(struct List *lst, List_El x, long long array_number)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return LIST_ERROR;
+    
+    if (array_number < 0 || array_number >= lst->capacity)       
+        return LIST_WRONG_INDEX;
+    
+    if (lst->data[array_number].prev == -1 && !(lst->size == 0 && array_number == 0))
+        return LIST_WRONG_INDEX;
+    
+    if (lst->capacity == lst->size)
+    {
+        if (ListResize(lst, lst->capacity * 2) != LIST_OK)
+            return LIST_WRONG_REALLOC;
+    }
+    
+    int free_tmp = lst->free;
+    lst->free = lst->data[free_tmp].next;                    
+    
+    if (lst->size == 0)
+    {   
+        lst->head = free_tmp;
+        struct Node new_node = {x, lst->head, lst->head};
+        lst->data[lst->head] = new_node;
+        
+        lst->size++;
+        return LIST_OK;
+    }
+    
+    struct Node new_node = {x, lst->data[array_number].prev, array_number};
+    
+    lst->data[free_tmp] = new_node;
+    lst->data[new_node.prev].next = free_tmp;
+    lst->data[new_node.next].prev = free_tmp;
+        
+    lst->size++;
+    
+    return LIST_OK;
+}
+
+static List_error ListErase_Internal(struct List *lst, long long array_number)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return LIST_ERROR;
+    
+    if (array_number < 0 || array_number >= lst->capacity) 
+        return LIST_ERROR;
+    
+    if (lst->data[array_number].prev == -1)
+        return LIST_ERROR;
+    
+    if (lst->size == 1)
+    {
+        lst->head = -1;
+        
+        struct Node dead_node = {-1, -1, lst->free};
+        lst->data[array_number] = dead_node;
+        lst->free = array_number;
+        
+        lst->size--;
+        lst->boost_mode = 0;
+        
+        return LIST_OK;
+    }
+    
+    if (lst->head == array_number)
+        lst->head = lst->data[array_number].next;
+    
+    lst->data[lst->data[array_number].prev].next = lst->data[array_number].next;
+    lst->data[lst->data[array_number].next].prev = lst->data[array_number].prev;
+    
+    struct Node dead_node = {-1, -1, lst->free};
+    lst->data[array_number] = dead_node;
+    lst->free = array_number;
+    
+    lst->size--;
+    
+    return LIST_OK;
+}
+
+List_error ListConstruct(struct List *lst, size_t capacity)
 {
     assert(lst != NULL);
     
@@ -48,7 +286,7 @@ List_error ListDestruct(struct List *lst)
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return LIST_ERROR;
     
     free(lst->data);
     lst->capacity = 0;
@@ -58,75 +296,6 @@ List_error ListDestruct(struct List *lst)
     lst->boost_mode =  0;
     
     return ListVerify(lst);
-}
-
-static List_error ListVerify(struct List *lst)
-{
-    if (lst->data == NULL)
-    {
-        printf("Ban because lst-data == NULL\n");
-        return LIST_ERROR;
-    }
-    if (lst->size > lst->capacity)
-    {
-        printf("Ban because of overflow\n");
-        return LIST_OVERFLOW;
-    }
-    if (lst->size < 0)
-    {
-        printf("Ban because of unferflow\n");
-        return LIST_UNDERFLOW;
-    }
-    
-    #ifdef DEBUG_MODE
-    if (lst->head != -1)
-    {
-        int curr_node = lst->data[lst->head].next;
-        int logic_number = 1;
-        while (curr_node != lst->head && logic_number < lst->size)
-        {
-            curr_node = lst->data[curr_node].next;
-            logic_number++;
-        }
-        if (logic_number != lst->size)
-        {
-            printf("There's cycle or something upstream data\n");
-            ListDump(lst);
-        return LIST_CYCLE;
-        }
-        curr_node = lst->data[lst->head].prev;
-        logic_number = 1;
-        while (curr_node != lst->head && logic_number < lst->size)
-        {
-            curr_node = lst->data[curr_node].prev;
-            logic_number++;
-        }
-        if (logic_number != lst->size)
-        {
-            printf("There's cycle or something reverse data\n");
-            ListDump(lst);
-            return LIST_CYCLE;
-        }
-    }
-    if (lst->free != -1)
-    {
-        int curr_node = lst->free;
-        int logic_number = 0;
-        while (curr_node != -1 && logic_number < lst->capacity - lst->size)
-        {
-            curr_node = lst->data[curr_node].next;
-            logic_number++;    
-        }
-        if (logic_number != lst->capacity - lst->size)
-        {
-            printf("There's cycle or something free data\n");
-            ListDump(lst);
-            return LIST_CYCLE;
-        }
-    }
-    #endif
-    
-    return LIST_OK;
 }
 
 List_error ListDump(struct List *lst)
@@ -200,57 +369,12 @@ List_error ListDump(struct List *lst)
     return LIST_OK;
 }
 
-static List_error ListResize(struct List *lst, long long new_cap)
-{
-    assert(lst != NULL);
-    
-    if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
-    
-    if (new_cap < lst->size)
-        return LIST_ERROR;
-    
-    struct Node *new_data = (struct Node *)realloc(lst->data, new_cap * sizeof(struct Node));
-    
-    if (new_data == NULL)
-        return LIST_WRONG_REALLOC;
-    
-    lst->data = new_data;
-    
-    if (new_cap == lst->size)
-    {
-        lst->capacity = new_cap;
-        return LIST_OK;
-    }
-    
-    int last_free = lst->free;
-    if (last_free == -1)
-        lst->free = lst->capacity;
-    else    
-    {
-        while(lst->data[last_free].next != -1)
-            last_free = lst->data[last_free].next;
-        
-        lst->data[last_free].next = lst->capacity;
-    }
-    for (int i = lst->capacity; i < new_cap - 1; i++)
-    {
-        struct Node free_node = {-1, -1, i + 1};
-        lst->data[i] = free_node;
-    }
-    struct Node last_node = {-1, -1, -1};
-    lst->data[new_cap - 1] = last_node;
-        
-    lst->capacity = new_cap;
-    return LIST_OK;
-}
-
 List_error ListBoost(struct List *lst)
 {
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return LIST_ERROR;
     
     if (lst->boost_mode == 1)
         return LIST_OK;
@@ -290,7 +414,7 @@ List_error ListShrinkToFit(struct List *lst)
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return LIST_ERROR;
     
     if (lst->boost_mode == 1)
         return ListResize(lst, lst->size);
@@ -298,128 +422,35 @@ List_error ListShrinkToFit(struct List *lst)
         return LIST_ERROR;
 }
 
-static int FindArrayNumber(struct List *lst, long long logic_number)
+List_Iterator ListPushBack(struct List *lst, List_El x)
 {
     assert(lst != NULL);
-    
+        
     if (ListVerify(lst) != LIST_OK)
         return -1;
-    
-    if (logic_number >= lst->size || logic_number < 0)
-        return -1;
-    
-    int array_number = lst->head; 
-    
-    for (int i = 0; i < logic_number; i++)
-        array_number = lst->data[array_number].next;
-    
-    return array_number;
-}
-
-static List_error ListInsert_Internal(struct List *lst, List_El x, long long array_number)
-{
-    assert(lst != NULL);
-    
-    if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
-    
-    if (array_number < 0 || array_number >= lst->capacity)       
-        return LIST_WRONG_INDEX;
-    
-    if (lst->data[array_number].prev == -1 && !(lst->size == 0 && array_number == 0))
-        return LIST_WRONG_INDEX;
-    
-    if (lst->capacity == lst->size)
-    {
-        if (ListResize(lst, lst->capacity * 2) != LIST_OK)
-            return LIST_WRONG_REALLOC;
-    }
-    
-    int free_tmp = lst->free;
-    lst->free = lst->data[free_tmp].next;                    
-    
-    if (lst->size == 0)
-    {   
-        lst->head = free_tmp;
-        struct Node new_node = {x, lst->head, lst->head};
-        lst->data[lst->head] = new_node;
-        
-        lst->size++;
-        return LIST_OK;
-    }
-    
-    struct Node new_node = {x, lst->data[array_number].prev, array_number};
-    
-    lst->data[free_tmp] = new_node;
-    lst->data[new_node.prev].next = free_tmp;
-    lst->data[new_node.next].prev = free_tmp;
-        
-    lst->size++;
-    
-    return LIST_OK;
-}
-
-static List_error ListErase_Internal(struct List *lst, long long array_number)
-{
-    assert(lst != NULL);
-    
-    if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
-    
-    if (array_number < 0 || array_number >= lst->capacity) 
-        return LIST_ERROR;
-    
-    if (lst->data[array_number].prev == -1)
-        return LIST_ERROR;
-    
-    if (lst->size == 1)
-    {
-        lst->head = -1;
-        
-        struct Node dead_node = {-1, -1, lst->free};
-        lst->data[array_number] = dead_node;
-        lst->free = array_number;
-        
-        lst->size--;
-        lst->boost_mode = 0;
-        
-        return LIST_OK;
-    }
-    
-    if (lst->head == array_number)
-        lst->head = lst->data[array_number].next;
-    
-    lst->data[lst->data[array_number].prev].next = lst->data[array_number].next;
-    lst->data[lst->data[array_number].next].prev = lst->data[array_number].prev;
-    
-    struct Node dead_node = {-1, -1, lst->free};
-    lst->data[array_number] = dead_node;
-    lst->free = array_number;
-    
-    lst->size--;
-    
-    return LIST_OK;
-}
-
-List_error ListPushBack(struct List *lst, List_El x)
-{
-    assert(lst != NULL);
-        
-    if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
-    
+            
     if (lst->size > 0)
-        return ListInsert_Internal(lst, x, lst->head);
+    {
+        if (ListInsert_Internal(lst, x, lst->head) == LIST_OK)
+            return lst->data[lst->head].prev;
+        else
+            return -1;
+    }
     else
-        return ListInsert_Internal(lst, x, 0);
+    {
+        if (ListInsert_Internal(lst, x, 0) == LIST_OK)
+            return lst->head;
+        else
+            return -1;
+    }
 }
 
-List_error ListPushFront(struct List *lst, List_El x)
+List_Iterator ListPushFront(struct List *lst, List_El x)
 {
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return -1;
     
     List_error check = LIST_OK;
 
@@ -431,9 +462,12 @@ List_error ListPushFront(struct List *lst, List_El x)
         check = ListInsert_Internal(lst, x, 0);
     
     if (check == LIST_OK)
+    {
         lst->head = lst->data[lst->head].prev;
-    
-    return check;
+        return lst->head;
+    }
+    else 
+        return -1;
 }
 
 List_error ListPopBack(struct List *lst)
@@ -441,7 +475,7 @@ List_error ListPopBack(struct List *lst)
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return LIST_ERROR;
     
     if (lst->size == 0)
         return LIST_ERROR;
@@ -454,14 +488,14 @@ List_error ListPopFront(struct List *lst)
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return LIST_ERROR;
     
     if (lst->size == 0)
         return LIST_ERROR;
     
     if (lst->boost_mode == 1) lst->boost_mode = 0;
     
-    return ListErase_Internal(lst, lst->head);    
+    return ListErase_Internal(lst, lst->head);  
 }
 
 List_El ListGetValue(struct List *lst, long long logic_number)
@@ -482,7 +516,7 @@ List_error ListInsert(struct List *lst, List_El x, long long logic_number)
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return LIST_ERROR;
         
     if (logic_number > lst->size || logic_number < 0)
         return LIST_WRONG_INDEX;
@@ -503,7 +537,7 @@ List_error ListErase(struct List *lst, long long logic_number)
     assert(lst != NULL);
     
     if (ListVerify(lst) != LIST_OK)
-        return ListVerify(lst);
+        return LIST_ERROR;
     
     if (logic_number >= lst->size || logic_number < 0)
         return LIST_WRONG_INDEX;
@@ -519,7 +553,7 @@ List_error ListErase(struct List *lst, long long logic_number)
     return ListErase_Internal(lst, FindArrayNumber(lst, logic_number));
 }
 
-long long ListSize(struct List *lst)
+size_t ListSize(struct List *lst)
 {
     assert(lst != NULL);
     
@@ -539,7 +573,101 @@ char isListBoosted(struct List *lst)
     return lst->boost_mode;
 }
 
+List_El ListGetValueIter(struct List *lst, List_Iterator iter)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+        
+    if (isIteratorValid(lst, iter))
+        return lst->data[iter].value;
+    else
+        return -1;
+}
 
+List_Iterator ListBegin(struct List *lst)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    return lst->head;
+}
 
+List_Iterator ListEnd(struct List *lst)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    return lst->data[lst->head].prev;
+}
 
+List_Iterator IteratorIncrease(struct List *lst, List_Iterator iter)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    if (isIteratorValid(lst, iter))
+        return lst->data[iter].next;
+    else
+        return -1;
+}
 
+List_Iterator IteratorDecrease(struct List *lst, List_Iterator iter)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+        
+    if (isIteratorValid(lst, iter))
+        return lst->data[iter].prev;
+    else
+        return -1;
+}
+
+List_Iterator ListInsertIter(struct List *lst, List_El x, List_Iterator iter)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    if (!isIteratorValid(lst, iter))
+        return -1;
+    
+    lst->boost_mode = 0;
+    
+    if (iter == lst->head)
+        return ListPushBack(lst, x);
+    
+    ListInsert_Internal(lst, x, iter);
+    return lst->data[iter].prev;
+}  
+
+List_error ListEraseIter(struct List *lst, List_Iterator iter)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return LIST_ERROR;
+    
+    if (!isIteratorValid(lst, iter))
+        return LIST_ERROR;
+
+    if (iter == lst->data[lst->head].prev)
+        return ListPopBack(lst);
+        
+    lst->boost_mode = 0;
+    
+    if (iter == lst->head)
+        return ListPopFront(lst);
+    
+    return ListErase_Internal(lst, iter);
+}
