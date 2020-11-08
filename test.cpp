@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 
 #define List(cond) ListGetValue(&list, cond)
+#define ListIt(iter) ListGetValueIter(&list, iter)
 
 TEST(construct_test, test1)
 {
@@ -163,7 +164,42 @@ TEST(boost_test, test1)
     ListBoost(&list);
     
     for (int i = 2500; i < 5000; i++)
-        ASSERT_EQ(i, ListGetValue(&list, i));
+        ASSERT_EQ(i, List(i) );
+    
+    ListDestruct(&list);
+}
+
+TEST(boost_test, test2)
+{
+    struct List list = {0};
+    ListConstruct(&list, 2);
+    
+    for (int i = 0; i < 100; i++)
+        ListPushBack(&list, i);
+        
+    for (int i = 0; i < 20; i++)
+        ListErase(&list, 50);
+    
+    ListBoost(&list);
+    ListDump(&list);
+    
+    for (int i = 50; i < 70; i++)
+    {
+        ASSERT_EQ(i + 20, List(i));
+        ASSERT_EQ(1, isListBoosted(&list));
+    }
+    
+    for (int i = 0; i < 1000; i++)
+    {
+        ListPushBack(&list, i);
+        ASSERT_EQ(1, isListBoosted(&list));
+    }
+    
+    for (int i = 0; i < 1000; i++)
+    {
+        ListPopBack(&list);
+        ASSERT_EQ(1, isListBoosted(&list));
+    }
     
     ListDestruct(&list);
 }
@@ -184,44 +220,90 @@ TEST(shrink_to_fit_test, test1)
     for (int i = 0; i < 200; i++)
     {   
         ASSERT_TRUE(isListBoosted(&list));
-        ASSERT_EQ(i, ListGetValue(&list, i)); 
+        ASSERT_EQ(i, List(i) ); 
     }
     
     ListDestruct(&list);
 }
 
-TEST(, )
+TEST(iterator_test, test1)
 {
     struct List list = {0};
     ListConstruct(&list, 2);
+    
+    for (int i = 0; i < 100; i++)
+        ListPushBack(&list, i);
+    
+    List_Iterator iterator =  ListPushBack(&list, 1000);
+        
+    ListDump(&list);    
+        
+    ASSERT_EQ(1000, ListIt(iterator));
+    iterator = IteratorDecrease(&list, iterator);
+    
+    for (int i = 99; iterator != ListEnd(&list); i--)
+    {
+        ASSERT_EQ(i,  ListIt(iterator));
+        iterator = IteratorDecrease(&list, iterator);
+    }
+    
     ListDump(&list);
     ListDestruct(&list);
 }
 
-TEST(, )
+TEST(iterator_test, test2)
 {
     struct List list = {0};
     ListConstruct(&list, 2);
+    
+    for (int i = 0; i < 100; i++)
+        ListPushBack(&list, i);
+    
+    List_Iterator iterator = ListBegin(&list);
+    
+    for (int i = 0; i < 50; i++)
+        iterator = IteratorIncrease(&list, iterator);
+    
     ListDump(&list);
+    
+    for (int i = 50; i < 100; i++)
+    {
+        ASSERT_EQ(i, ListIt(iterator));
+        iterator = IteratorIncrease(&list, iterator);
+    }
+
     ListDestruct(&list);
 }
 
-TEST(, )
+TEST(iterator_test, test3)
 {
     struct List list = {0};
     ListConstruct(&list, 2);
+    
+    for (int i = 0; i < 100; i++)
+        ListPushBack(&list, i);
+    
+    for (int i = 20; i < 40; i++)
+        ListErase(&list, 20);
+        
+    ListBoost(&list);
+    List_Iterator iterator = ListBegin(&list);
+    
+    for (int i = 0; i < 20; i++)
+        iterator = IteratorIncrease(&list, iterator);
+    
+    ASSERT_EQ(20, iterator);
+    
+    ListDump(&list);    
+    
+    for (int i = 0; i < 20; i++)
+    {
+        ASSERT_EQ(i + 40, ListGetValueIter(&list, iterator));
+        iterator = IteratorIncrease(&list, iterator);
+    }
     ListDump(&list);
     ListDestruct(&list);
 }
-
-TEST(, )
-{
-    struct List list = {0};
-    ListConstruct(&list, 2);
-    ListDump(&list);
-    ListDestruct(&list);
-}
-
 
 int main()
 {

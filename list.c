@@ -385,7 +385,7 @@ List_error ListBoost(struct List *lst)
         return LIST_OK;
     }
     
-    struct Node *new_data = (struct Node *)calloc(lst->capacity, sizeof(struct Node));
+    struct Node *new_data = (struct Node *)calloc(lst->size, sizeof(struct Node));
     
     if (new_data == NULL)
         return LIST_WRONG_REALLOC;
@@ -522,12 +522,12 @@ List_error ListInsert(struct List *lst, List_El x, long long logic_number)
         return LIST_WRONG_INDEX;
         
     if (logic_number == lst->size)
-        return ListPushBack(lst, x);
+        ListPushBack(lst, x);
     
     lst->boost_mode = 0;
     
     if (logic_number == 0)
-        return ListPushFront(lst, x);
+        ListPushFront(lst, x);
     
     return ListInsert_Internal(lst, x, FindArrayNumber(lst, logic_number));
 }
@@ -671,3 +671,4 @@ List_error ListEraseIter(struct List *lst, List_Iterator iter)
     
     return ListErase_Internal(lst, iter);
 }
+

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdlib.h>
+
 typedef long long List_El;
 
 typedef long long List_Iterator;
@@ -59,6 +61,8 @@ List_error ListErase(struct List *lst, long long logic_number);
 size_t ListSize(struct List *lst);
 
 char isListBoosted(struct List *lst);
+
+List_El ListGetValueIter(struct List *lst, List_Iterator iter);
 
 List_Iterator ListBegin(struct List *lst);
 
