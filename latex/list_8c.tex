@@ -1,0 +1,1695 @@
+\hypertarget{list_8c}{}\doxysection{list.\+c File Reference}
+\label{list_8c}\index{list.c@{list.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\newline
+Include dependency graph for list.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{list_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{list_8c_ac80a3592e72fd96b772ee47a7d8e0d0a}{D\+E\+B\+U\+G\+\_\+\+M\+O\+DE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{List\+Verify}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}{List\+Resize}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, size\+\_\+t new\+\_\+cap)
+\item 
+static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{List\+Insert\+\_\+\+Internal}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} x, long long array\+\_\+number)
+\item 
+static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{List\+Erase\+\_\+\+Internal}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, long long array\+\_\+number)
+\item 
+static char \mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{is\+Iterator\+Valid}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} iter)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_af6f09665ab20fa6c0ad1fc6ead8e75ee}{List\+Construct}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, size\+\_\+t capacity)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a7b4f9425dd9701d97e30fe9ce5af3d7a}{List\+Destruct}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{List\+Dump}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_af9126e34a67c2824d1d39e820f01b345}{List\+Boost}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a0773be9090ec6f5d77ce58ff2892b48b}{List\+Shrink\+To\+Fit}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_a7c5ff601bc85471b4148a1c4c15787ae}{List\+Push\+Back}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} x)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_afe4e636b84899e781aae6af9456fd88d}{List\+Push\+Front}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} x)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7}{List\+Pop\+Back}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a9fa41f03d1f4dc775abb9d794364108a}{List\+Pop\+Front}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+size\+\_\+t \mbox{\hyperlink{list_8c_ae5a0875e75abe50e1cdd481bbbf0e75e}{List\+Size}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+char \mbox{\hyperlink{list_8c_af15780d26607314e4766307f392dce48}{is\+List\+Boosted}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_afce1ade5264bd8b2c42ab71b4290c3ca}{Get\+Iterator}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, long long logic\+\_\+number)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_a5e9356622317d5e79d4ec5b3bb3d5793}{Get\+Iterator\+\_\+\+Value}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} x)
+\item 
+\mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} \mbox{\hyperlink{list_8c_a7d48b3838b93a9d9c1f505d4d64772e5}{List\+Get\+Value}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} iter)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_ae08cf75c785f936bea85843acec83677}{List\+Begin}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_a80893fa3b92ec10f28b63013816b78d0}{List\+End}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_a26b93b5ffd0d4dbc5c453478ded5ddf3}{Iterator\+Increase}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} iter)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_a6263ce01ab89d962cd70a40dff38c7f2}{Iterator\+Decrease}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} iter)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_a06dd8071a4dd95526a9b8612900dd9cb}{List\+Insert\+Before}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} x, \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} iter)
+\item 
+\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} \mbox{\hyperlink{list_8c_ac56df94c6dff4c7d05afdaa7669409d2}{List\+Insert\+After}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} x, \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} iter)
+\item 
+\mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} \mbox{\hyperlink{list_8c_a9ed9856ba60db767e2d2b2bd7f0d0ec9}{List\+Erase}} (struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$lst, \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} iter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{list_8c_ac80a3592e72fd96b772ee47a7d8e0d0a}\label{list_8c_ac80a3592e72fd96b772ee47a7d8e0d0a}} 
+\index{list.c@{list.c}!DEBUG\_MODE@{DEBUG\_MODE}}
+\index{DEBUG\_MODE@{DEBUG\_MODE}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_MODE}{DEBUG\_MODE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+M\+O\+DE}
+
+
+
+Definition at line 56 of file list.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{list_8c_afce1ade5264bd8b2c42ab71b4290c3ca}\label{list_8c_afce1ade5264bd8b2c42ab71b4290c3ca}} 
+\index{list.c@{list.c}!GetIterator@{GetIterator}}
+\index{GetIterator@{GetIterator}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{GetIterator()}{GetIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} Get\+Iterator (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{long long}]{logic\+\_\+number }\end{DoxyParamCaption})}
+
+Get iterator by index in list. Works for O(n) if list unboosted, and for O(1) of list boosted 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em logic\+\_\+number} & Index in list which iterator need to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator by index 
+\end{DoxyReturn}
+
+
+Definition at line 540 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{541 \{}
+\DoxyCodeLine{542     assert(lst != NULL);}
+\DoxyCodeLine{543     }
+\DoxyCodeLine{544     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{545         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{546     }
+\DoxyCodeLine{547     \textcolor{keywordflow}{if} (logic\_number >= lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} || logic\_number < 0)}
+\DoxyCodeLine{548         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{549     }
+\DoxyCodeLine{550     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
+\DoxyCodeLine{551         \textcolor{keywordflow}{return} logic\_number;}
+\DoxyCodeLine{552     }
+\DoxyCodeLine{553     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} iterator = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}; }
+\DoxyCodeLine{554     }
+\DoxyCodeLine{555     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < logic\_number; i++)}
+\DoxyCodeLine{556         iterator = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iterator].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{557     }
+\DoxyCodeLine{558     \textcolor{keywordflow}{return} iterator;}
+\DoxyCodeLine{559 \}    }
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+OK, List\+Verify(), Node\+::next, and List\+::size.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{list_8c_afce1ade5264bd8b2c42ab71b4290c3ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a5e9356622317d5e79d4ec5b3bb3d5793}\label{list_8c_a5e9356622317d5e79d4ec5b3bb3d5793}} 
+\index{list.c@{list.c}!GetIterator\_Value@{GetIterator\_Value}}
+\index{GetIterator\_Value@{GetIterator\_Value}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{GetIterator\_Value()}{GetIterator\_Value()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} Get\+Iterator\+\_\+\+Value (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}}}]{x }\end{DoxyParamCaption})}
+
+Get iterator by value of element. Finds first entry in list. If there\textquotesingle{}s no element x returns -\/1 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em x} & Value what need to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator of the element, or -\/1 if there\textquotesingle{}s no such value 
+\end{DoxyReturn}
+
+
+Definition at line 561 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{562 \{}
+\DoxyCodeLine{563     assert(lst != NULL);}
+\DoxyCodeLine{564     }
+\DoxyCodeLine{565     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{566         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{567     }
+\DoxyCodeLine{568     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} iterator = -\/1;}
+\DoxyCodeLine{569     }
+\DoxyCodeLine{570     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{571     }
+\DoxyCodeLine{572     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{573         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}} == x)}
+\DoxyCodeLine{574         \{}
+\DoxyCodeLine{575             iterator = curr\_node;}
+\DoxyCodeLine{576             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{577         \}}
+\DoxyCodeLine{578         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{579     \} \textcolor{keywordflow}{while}(curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
+\DoxyCodeLine{580     }
+\DoxyCodeLine{581     \textcolor{keywordflow}{return} iterator;}
+\DoxyCodeLine{582 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+OK, List\+Verify(), Node\+::next, and Node\+::value.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a5e9356622317d5e79d4ec5b3bb3d5793_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_adfd8599d25d547782ffb93f50313c092}\label{list_8c_adfd8599d25d547782ffb93f50313c092}} 
+\index{list.c@{list.c}!isIteratorValid@{isIteratorValid}}
+\index{isIteratorValid@{isIteratorValid}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{isIteratorValid()}{isIteratorValid()}}
+{\footnotesize\ttfamily static char is\+Iterator\+Valid (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}}}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checking validity of iterator 
+\begin{DoxyParams}{Parameters}
+{\em lst} & \mbox{\hyperlink{list_8h_structList}{List}} where need to check iterator \\
+\hline
+{\em iter} & Iterator in list which need to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if iterator valid, or 0 if it\textquotesingle{}s not 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127 \{}
+\DoxyCodeLine{128     assert(lst != NULL);}
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{131         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133     \textcolor{keywordflow}{if} (iter < 0 || iter >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} || lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
+\DoxyCodeLine{134     \{   }
+\DoxyCodeLine{135         printf(\textcolor{stringliteral}{"Wrong iterator\(\backslash\)n"});}
+\DoxyCodeLine{136         \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{137         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{138     \}}
+\DoxyCodeLine{139     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{140         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{141 \}}
+
+\end{DoxyCode}
+
+
+References List\+::capacity, List\+::data, L\+I\+S\+T\+\_\+\+OK, List\+Dump(), List\+Verify(), and Node\+::prev.
+
+
+
+Referenced by Iterator\+Decrease(), Iterator\+Increase(), List\+Erase(), List\+Get\+Value(), List\+Insert\+After(), and List\+Insert\+Before().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_adfd8599d25d547782ffb93f50313c092_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{list_8c_adfd8599d25d547782ffb93f50313c092_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_af15780d26607314e4766307f392dce48}\label{list_8c_af15780d26607314e4766307f392dce48}} 
+\index{list.c@{list.c}!isListBoosted@{isListBoosted}}
+\index{isListBoosted@{isListBoosted}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{isListBoosted()}{isListBoosted()}}
+{\footnotesize\ttfamily char is\+List\+Boosted (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Check list\textquotesingle{}s boost mode 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if list boosted, 0 if it\textquotesingle{}s not 
+\end{DoxyReturn}
+
+
+Definition at line 530 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{531 \{}
+\DoxyCodeLine{532     assert(lst != NULL);}
+\DoxyCodeLine{533     }
+\DoxyCodeLine{534     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{535         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{536     }
+\DoxyCodeLine{537     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}};}
+\DoxyCodeLine{538 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, L\+I\+S\+T\+\_\+\+OK, and List\+Verify().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_af15780d26607314e4766307f392dce48_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a6263ce01ab89d962cd70a40dff38c7f2}\label{list_8c_a6263ce01ab89d962cd70a40dff38c7f2}} 
+\index{list.c@{list.c}!IteratorDecrease@{IteratorDecrease}}
+\index{IteratorDecrease@{IteratorDecrease}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{IteratorDecrease()}{IteratorDecrease()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} Iterator\+Decrease (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}}}]{iter }\end{DoxyParamCaption})}
+
+Get previous iterator by present iterator 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em iter} & Present iterator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Previoust iterator 
+\end{DoxyReturn}
+
+
+Definition at line 630 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{631 \{}
+\DoxyCodeLine{632     assert(lst != NULL);}
+\DoxyCodeLine{633     }
+\DoxyCodeLine{634     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{635         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{636         }
+\DoxyCodeLine{637     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{638         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{639     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{640         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{641 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Verify(), and Node\+::prev.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a6263ce01ab89d962cd70a40dff38c7f2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a26b93b5ffd0d4dbc5c453478ded5ddf3}\label{list_8c_a26b93b5ffd0d4dbc5c453478ded5ddf3}} 
+\index{list.c@{list.c}!IteratorIncrease@{IteratorIncrease}}
+\index{IteratorIncrease@{IteratorIncrease}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{IteratorIncrease()}{IteratorIncrease()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} Iterator\+Increase (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}}}]{iter }\end{DoxyParamCaption})}
+
+Get next iterator by present iterator 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em iter} & Present iterator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next iterator 
+\end{DoxyReturn}
+
+
+Definition at line 617 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{618 \{}
+\DoxyCodeLine{619     assert(lst != NULL);}
+\DoxyCodeLine{620     }
+\DoxyCodeLine{621     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{622         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{623     }
+\DoxyCodeLine{624     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{625         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{626     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{627         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{628 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Verify(), and Node\+::next.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a26b93b5ffd0d4dbc5c453478ded5ddf3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_ae08cf75c785f936bea85843acec83677}\label{list_8c_ae08cf75c785f936bea85843acec83677}} 
+\index{list.c@{list.c}!ListBegin@{ListBegin}}
+\index{ListBegin@{ListBegin}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListBegin()}{ListBegin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} List\+Begin (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Get iterator of the first element 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator of the first element 
+\end{DoxyReturn}
+
+
+Definition at line 597 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{598 \{}
+\DoxyCodeLine{599     assert(lst != NULL);}
+\DoxyCodeLine{600     }
+\DoxyCodeLine{601     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{602         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{603     }
+\DoxyCodeLine{604     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{605 \}}
+
+\end{DoxyCode}
+
+
+References List\+::head, L\+I\+S\+T\+\_\+\+OK, and List\+Verify().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{list_8c_ae08cf75c785f936bea85843acec83677_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_af9126e34a67c2824d1d39e820f01b345}\label{list_8c_af9126e34a67c2824d1d39e820f01b345}} 
+\index{list.c@{list.c}!ListBoost@{ListBoost}}
+\index{ListBoost@{ListBoost}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListBoost()}{ListBoost()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Boost (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Boosting list. Access from Get\+Iterator will be by O(1). Boost mode turns off if you insert/erase element not in the end of the list. Works for O(n) 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 391 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{392 \{}
+\DoxyCodeLine{393     assert(lst != NULL);}
+\DoxyCodeLine{394     }
+\DoxyCodeLine{395     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{396         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{397     }
+\DoxyCodeLine{398     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
+\DoxyCodeLine{399         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{400     }
+\DoxyCodeLine{401     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{402     \{}
+\DoxyCodeLine{403         lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 1;}
+\DoxyCodeLine{404         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{405     \}}
+\DoxyCodeLine{406     }
+\DoxyCodeLine{407     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *new\_data = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)calloc(lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
+\DoxyCodeLine{408     }
+\DoxyCodeLine{409     \textcolor{keywordflow}{if} (new\_data == NULL)}
+\DoxyCodeLine{410         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
+\DoxyCodeLine{411     }
+\DoxyCodeLine{412     \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{413     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}; i++)}
+\DoxyCodeLine{414     \{}
+\DoxyCodeLine{415         new\_data[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}};}
+\DoxyCodeLine{416         new\_data[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = (i + 1) \% lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{417         new\_data[i].prev = (i -\/ 1 + lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}) \% lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{418         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{419     \}}
+\DoxyCodeLine{420     }
+\DoxyCodeLine{421     free(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}});}
+\DoxyCodeLine{422     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = new\_data;}
+\DoxyCodeLine{423     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{424     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = -\/1;}
+\DoxyCodeLine{425     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = 0;}
+\DoxyCodeLine{426     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 1;}
+\DoxyCodeLine{427         }
+\DoxyCodeLine{428     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{429 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, L\+I\+S\+T\+\_\+\+W\+R\+O\+N\+G\+\_\+\+R\+E\+A\+L\+L\+OC, List\+Verify(), Node\+::next, Node\+::prev, List\+::size, and Node\+::value.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{list_8c_af9126e34a67c2824d1d39e820f01b345_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_af6f09665ab20fa6c0ad1fc6ead8e75ee}\label{list_8c_af6f09665ab20fa6c0ad1fc6ead8e75ee}} 
+\index{list.c@{list.c}!ListConstruct@{ListConstruct}}
+\index{ListConstruct@{ListConstruct}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListConstruct()}{ListConstruct()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Construct (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+Construct list structure 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em capacity} & Capacity of the list in the begining \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 275 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{276 \{}
+\DoxyCodeLine{277     assert(lst != NULL);}
+\DoxyCodeLine{278     }
+\DoxyCodeLine{279     \textcolor{keywordflow}{if} (capacity <= 0)}
+\DoxyCodeLine{280         capacity = 1;}
+\DoxyCodeLine{281     }
+\DoxyCodeLine{282     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)calloc(capacity, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
+\DoxyCodeLine{283     }
+\DoxyCodeLine{284     assert(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} != NULL);}
+\DoxyCodeLine{285     }
+\DoxyCodeLine{286     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = 0;}
+\DoxyCodeLine{287     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < capacity -\/ 1; i++)}
+\DoxyCodeLine{288     \{}
+\DoxyCodeLine{289         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} free\_node = \{-\/1, -\/1, i + 1\};}
+\DoxyCodeLine{290         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i] = free\_node;}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} last\_node = \{-\/1, -\/1 , -\/1\};}
+\DoxyCodeLine{293     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[capacity -\/ 1] = last\_node;}
+\DoxyCodeLine{294     }
+\DoxyCodeLine{295     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
+\DoxyCodeLine{296     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = capacity;}
+\DoxyCodeLine{297     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} = 0;}
+\DoxyCodeLine{298     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{299     }
+\DoxyCodeLine{300     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst);}
+\DoxyCodeLine{301 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::capacity, List\+::data, List\+::free, List\+::head, List\+Verify(), and List\+::size.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_af6f09665ab20fa6c0ad1fc6ead8e75ee_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a7b4f9425dd9701d97e30fe9ce5af3d7a}\label{list_8c_a7b4f9425dd9701d97e30fe9ce5af3d7a}} 
+\index{list.c@{list.c}!ListDestruct@{ListDestruct}}
+\index{ListDestruct@{ListDestruct}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListDestruct()}{ListDestruct()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Destruct (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Destruct list structure 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{304 \{}
+\DoxyCodeLine{305     assert(lst != NULL);}
+\DoxyCodeLine{306     }
+\DoxyCodeLine{307     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{308         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{309     }
+\DoxyCodeLine{310     free(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}});}
+\DoxyCodeLine{311     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = 0;}
+\DoxyCodeLine{312     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} =  0;}
+\DoxyCodeLine{313     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
+\DoxyCodeLine{314     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = -\/1;}
+\DoxyCodeLine{315     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} =  0;}
+\DoxyCodeLine{316     }
+\DoxyCodeLine{317     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst);}
+\DoxyCodeLine{318 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, List\+Verify(), and List\+::size.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a7b4f9425dd9701d97e30fe9ce5af3d7a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}\label{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}} 
+\index{list.c@{list.c}!ListDump@{ListDump}}
+\index{ListDump@{ListDump}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListDump()}{ListDump()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Dump (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Function of dumping list. Creates List\+Dump.\+log and List\+Dump.\+pdf 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 320 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{321 \{}
+\DoxyCodeLine{322     assert(lst != NULL);}
+\DoxyCodeLine{323     }
+\DoxyCodeLine{324     FILE *dump = fopen(\textcolor{stringliteral}{"ListDump.log"}, \textcolor{stringliteral}{"wb"});}
+\DoxyCodeLine{325     fprintf(dump, \textcolor{stringliteral}{"================== LIST DUMP ==================\(\backslash\)n"}}
+\DoxyCodeLine{326             \textcolor{stringliteral}{"Size       = \%i\(\backslash\)n"}}
+\DoxyCodeLine{327             \textcolor{stringliteral}{"Capacity   = \%i\(\backslash\)n"}}
+\DoxyCodeLine{328             \textcolor{stringliteral}{"Head       = \%i\(\backslash\)n"}}
+\DoxyCodeLine{329             \textcolor{stringliteral}{"Free       = \%i\(\backslash\)n"}}
+\DoxyCodeLine{330             \textcolor{stringliteral}{"Boost Mode = \%i\(\backslash\)n"},}
+\DoxyCodeLine{331             lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}, lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}, lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}});}
+\DoxyCodeLine{332     fprintf(dump,     \textcolor{stringliteral}{"\(\backslash\)nDATA:\(\backslash\)n"}}
+\DoxyCodeLine{333                       \textcolor{stringliteral}{"№    |     value     | next | prev |\(\backslash\)n"});}
+\DoxyCodeLine{334     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
+\DoxyCodeLine{335     \{}
+\DoxyCodeLine{336         fprintf(dump, \textcolor{stringliteral}{"[\%2i] |\%14lli |  \%2i  |  \%2i  |\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
+\DoxyCodeLine{337     \}}
+\DoxyCodeLine{338     fprintf(dump, \textcolor{stringliteral}{"================== THE END ====================\(\backslash\)n"});}
+\DoxyCodeLine{339     }
+\DoxyCodeLine{340     fclose(dump);}
+\DoxyCodeLine{341     }
+\DoxyCodeLine{342     FILE *graph = fopen(\textcolor{stringliteral}{"graph.gv"}, \textcolor{stringliteral}{"wb"});}
+\DoxyCodeLine{343     }
+\DoxyCodeLine{344     fprintf(graph, \textcolor{stringliteral}{"digraph structs \{\(\backslash\)n"}}
+\DoxyCodeLine{345                    \textcolor{stringliteral}{"    node [shape=record];\(\backslash\)n"});}
+\DoxyCodeLine{346     }
+\DoxyCodeLine{347     \textcolor{keyword}{const} \textcolor{keywordtype}{char} * color = NULL;   }
+\DoxyCodeLine{348     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
+\DoxyCodeLine{349     \{   }
+\DoxyCodeLine{350         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} != -\/1)}
+\DoxyCodeLine{351             color = \textcolor{stringliteral}{"\#6659E1"};}
+\DoxyCodeLine{352         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{353             color = \textcolor{stringliteral}{"\#1CAC1C"};}
+\DoxyCodeLine{354         }
+\DoxyCodeLine{355         fprintf(graph,\textcolor{stringliteral}{" struct\_\%i [shape=record, style = filled, fillcolor = \(\backslash\)"\%s\(\backslash\)", "}}
+\DoxyCodeLine{356                       \textcolor{stringliteral}{"label=\(\backslash\)" value = \%i | number\_array = \%i |"}}
+\DoxyCodeLine{357                       \textcolor{stringliteral}{" \{prev = \%i | next = \%i\} \(\backslash\)"];\(\backslash\)n"},}
+\DoxyCodeLine{358                       i, color, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{359     \}               }
+\DoxyCodeLine{360     }
+\DoxyCodeLine{361     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} >= 1)}
+\DoxyCodeLine{362     \{}
+\DoxyCodeLine{363         fprintf(graph, \textcolor{stringliteral}{"struct\_\%i [style = filled, fillcolor = \(\backslash\)"\#E5EF5A\(\backslash\)"];\(\backslash\)n"}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
+\DoxyCodeLine{364         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} >= 2)}
+\DoxyCodeLine{365             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i [style = filled, fillcolor = \(\backslash\)"\#FF353C\(\backslash\)"];\(\backslash\)n"}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
+\DoxyCodeLine{366     \}}
+\DoxyCodeLine{367     }
+\DoxyCodeLine{368     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
+\DoxyCodeLine{369     \{}
+\DoxyCodeLine{370         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
+\DoxyCodeLine{371         \{}
+\DoxyCodeLine{372             \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} != -\/1)}
+\DoxyCodeLine{373                 fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{374         \}}
+\DoxyCodeLine{375         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{376         \{}
+\DoxyCodeLine{377             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{378             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
+\DoxyCodeLine{379         \}}
+\DoxyCodeLine{380     \}}
+\DoxyCodeLine{381     }
+\DoxyCodeLine{382     fprintf(graph, \textcolor{stringliteral}{"\}\(\backslash\)n"});}
+\DoxyCodeLine{383     }
+\DoxyCodeLine{384     fclose(graph);}
+\DoxyCodeLine{385     }
+\DoxyCodeLine{386     system(\textcolor{stringliteral}{"circo -\/Tpdf graph.gv -\/o ListDump.pdf \&\& rm graph.gv"});}
+\DoxyCodeLine{387     }
+\DoxyCodeLine{388     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{389 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+OK, Node\+::next, Node\+::prev, List\+::size, and Node\+::value.
+
+
+
+Referenced by is\+Iterator\+Valid(), and List\+Verify().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a80893fa3b92ec10f28b63013816b78d0}\label{list_8c_a80893fa3b92ec10f28b63013816b78d0}} 
+\index{list.c@{list.c}!ListEnd@{ListEnd}}
+\index{ListEnd@{ListEnd}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListEnd()}{ListEnd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} List\+End (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Get iterator of the last element 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator of the last element 
+\end{DoxyReturn}
+
+
+Definition at line 607 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{608 \{}
+\DoxyCodeLine{609     assert(lst != NULL);}
+\DoxyCodeLine{610     }
+\DoxyCodeLine{611     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{612         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{613     }
+\DoxyCodeLine{614     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{615 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+OK, List\+Verify(), and Node\+::prev.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{list_8c_a80893fa3b92ec10f28b63013816b78d0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a9ed9856ba60db767e2d2b2bd7f0d0ec9}\label{list_8c_a9ed9856ba60db767e2d2b2bd7f0d0ec9}} 
+\index{list.c@{list.c}!ListErase@{ListErase}}
+\index{ListErase@{ListErase}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListErase()}{ListErase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Erase (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}}}]{iter }\end{DoxyParamCaption})}
+
+Erase element by iterator 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em iter} & Iterator which element need to erase (iterator after that is wrong) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 679 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{680 \{}
+\DoxyCodeLine{681     assert(lst != NULL);}
+\DoxyCodeLine{682     }
+\DoxyCodeLine{683     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{684         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{685     }
+\DoxyCodeLine{686     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{687         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{688 }
+\DoxyCodeLine{689     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}})}
+\DoxyCodeLine{690         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7}{ListPopBack}}(lst);}
+\DoxyCodeLine{691         }
+\DoxyCodeLine{692     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{693     }
+\DoxyCodeLine{694     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}})}
+\DoxyCodeLine{695         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a9fa41f03d1f4dc775abb9d794364108a}{ListPopFront}}(lst);}
+\DoxyCodeLine{696     }
+\DoxyCodeLine{697     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, iter);}
+\DoxyCodeLine{698 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::data, List\+::head, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, List\+Erase\+\_\+\+Internal(), List\+Pop\+Back(), List\+Pop\+Front(), List\+Verify(), and Node\+::prev.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a9ed9856ba60db767e2d2b2bd7f0d0ec9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}\label{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}} 
+\index{list.c@{list.c}!ListErase\_Internal@{ListErase\_Internal}}
+\index{ListErase\_Internal@{ListErase\_Internal}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListErase\_Internal()}{ListErase\_Internal()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Erase\+\_\+\+Internal (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{long long}]{array\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Erase element by array\+\_\+number. 
+\begin{DoxyParams}{Parameters}
+{\em lst} & \mbox{\hyperlink{list_8h_structList}{List}} where need to erase element \\
+\hline
+{\em array\+\_\+number} & Number in array(iterator actually) which need to erase \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 233 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{234 \{}
+\DoxyCodeLine{235     assert(lst != NULL);}
+\DoxyCodeLine{236     }
+\DoxyCodeLine{237     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{238         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{239     }
+\DoxyCodeLine{240     \textcolor{keywordflow}{if} (array\_number < 0 || array\_number >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}) }
+\DoxyCodeLine{241         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{242     }
+\DoxyCodeLine{243     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
+\DoxyCodeLine{244         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{245     }
+\DoxyCodeLine{246     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 1)}
+\DoxyCodeLine{247     \{}
+\DoxyCodeLine{248         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
+\DoxyCodeLine{249         }
+\DoxyCodeLine{250         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} dead\_node = \{-\/1, -\/1, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}\};}
+\DoxyCodeLine{251         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number] = dead\_node;}
+\DoxyCodeLine{252         lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = array\_number;}
+\DoxyCodeLine{253         }
+\DoxyCodeLine{254         lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}-\/-\/;}
+\DoxyCodeLine{255         lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{256         }
+\DoxyCodeLine{257         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{258     \}}
+\DoxyCodeLine{259     }
+\DoxyCodeLine{260     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} == array\_number)}
+\DoxyCodeLine{261         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{262     }
+\DoxyCodeLine{263     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{264     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{265     }
+\DoxyCodeLine{266     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} dead\_node = \{-\/1, -\/1, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}\};}
+\DoxyCodeLine{267     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number] = dead\_node;}
+\DoxyCodeLine{268     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = array\_number;}
+\DoxyCodeLine{269     }
+\DoxyCodeLine{270     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}-\/-\/;}
+\DoxyCodeLine{271     }
+\DoxyCodeLine{272     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{273 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, List\+Verify(), Node\+::next, Node\+::prev, and List\+::size.
+
+
+
+Referenced by List\+Erase(), List\+Pop\+Back(), and List\+Pop\+Front().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a957ee1a520cba2eb92b8551ac42f57e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a957ee1a520cba2eb92b8551ac42f57e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a7d48b3838b93a9d9c1f505d4d64772e5}\label{list_8c_a7d48b3838b93a9d9c1f505d4d64772e5}} 
+\index{list.c@{list.c}!ListGetValue@{ListGetValue}}
+\index{ListGetValue@{ListGetValue}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListGetValue()}{ListGetValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}} List\+Get\+Value (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}}}]{iter }\end{DoxyParamCaption})}
+
+Get value of element in list by iterator 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em iter} & Iterator in list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the element or -\/1 if there\textquotesingle{}s something wrong 
+\end{DoxyReturn}
+
+
+Definition at line 584 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{585 \{}
+\DoxyCodeLine{586     assert(lst != NULL);}
+\DoxyCodeLine{587     }
+\DoxyCodeLine{588     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{589         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{590         }
+\DoxyCodeLine{591     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{592         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}};}
+\DoxyCodeLine{593     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{594         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{595 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Verify(), and Node\+::value.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a7d48b3838b93a9d9c1f505d4d64772e5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a2f513993aacfccc7af38c69434589a40}\label{list_8c_a2f513993aacfccc7af38c69434589a40}} 
+\index{list.c@{list.c}!ListInsert\_Internal@{ListInsert\_Internal}}
+\index{ListInsert\_Internal@{ListInsert\_Internal}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListInsert\_Internal()}{ListInsert\_Internal()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Insert\+\_\+\+Internal (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}}}]{x,  }\item[{long long}]{array\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Insert new element before array\+\_\+number element. if array\+\_\+number is head of the list insert new element in the end 
+\begin{DoxyParams}{Parameters}
+{\em lst} & \mbox{\hyperlink{list_8h_structList}{List}} where need to insert element \\
+\hline
+{\em x} & Element of list which need to insert \\
+\hline
+{\em array\+\_\+number} & Number in array (iterator actually) before which need to insert element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 190 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{191 \{}
+\DoxyCodeLine{192     assert(lst != NULL);}
+\DoxyCodeLine{193     }
+\DoxyCodeLine{194     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{195         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{196     }
+\DoxyCodeLine{197     \textcolor{keywordflow}{if} (array\_number < 0 || array\_number >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}})       }
+\DoxyCodeLine{198         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcab93fe2b2fc77331606efc674399a1525}{LIST\_WRONG\_INDEX}};}
+\DoxyCodeLine{199     }
+\DoxyCodeLine{200     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1 \&\& !(lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0 \&\& array\_number == 0))}
+\DoxyCodeLine{201         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcab93fe2b2fc77331606efc674399a1525}{LIST\_WRONG\_INDEX}};}
+\DoxyCodeLine{202     }
+\DoxyCodeLine{203     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} == lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{204     \{}
+\DoxyCodeLine{205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}{ListResize}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} * 2) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{206             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
+\DoxyCodeLine{207     \}}
+\DoxyCodeLine{208     }
+\DoxyCodeLine{209     \textcolor{keywordtype}{int} free\_tmp = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
+\DoxyCodeLine{210     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[free\_tmp].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};                    }
+\DoxyCodeLine{211     }
+\DoxyCodeLine{212     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{213     \{   }
+\DoxyCodeLine{214         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = free\_tmp;}
+\DoxyCodeLine{215         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} new\_node = \{x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}\};}
+\DoxyCodeLine{216         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}] = new\_node;}
+\DoxyCodeLine{217         }
+\DoxyCodeLine{218         lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}++;}
+\DoxyCodeLine{219         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{220     \}}
+\DoxyCodeLine{221     }
+\DoxyCodeLine{222     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} new\_node = \{x, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}, array\_number\};}
+\DoxyCodeLine{223     }
+\DoxyCodeLine{224     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[free\_tmp] = new\_node;}
+\DoxyCodeLine{225     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_node.\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = free\_tmp;}
+\DoxyCodeLine{226     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_node.\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} = free\_tmp;}
+\DoxyCodeLine{227         }
+\DoxyCodeLine{228     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}++;}
+\DoxyCodeLine{229     }
+\DoxyCodeLine{230     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{231 \}}
+
+\end{DoxyCode}
+
+
+References List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, L\+I\+S\+T\+\_\+\+W\+R\+O\+N\+G\+\_\+\+I\+N\+D\+EX, L\+I\+S\+T\+\_\+\+W\+R\+O\+N\+G\+\_\+\+R\+E\+A\+L\+L\+OC, List\+Resize(), List\+Verify(), Node\+::next, Node\+::prev, and List\+::size.
+
+
+
+Referenced by List\+Insert\+After(), List\+Insert\+Before(), List\+Push\+Back(), and List\+Push\+Front().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a2f513993aacfccc7af38c69434589a40_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a2f513993aacfccc7af38c69434589a40_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_ac56df94c6dff4c7d05afdaa7669409d2}\label{list_8c_ac56df94c6dff4c7d05afdaa7669409d2}} 
+\index{list.c@{list.c}!ListInsertAfter@{ListInsertAfter}}
+\index{ListInsertAfter@{ListInsertAfter}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListInsertAfter()}{ListInsertAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} List\+Insert\+After (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}}}]{x,  }\item[{\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}}}]{iter }\end{DoxyParamCaption})}
+
+Insert element x after iterator 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em x} & Element which need to insert \\
+\hline
+{\em iter} & Iterator after which need to insert element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator of new inserted element 
+\end{DoxyReturn}
+
+
+Definition at line 662 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{663 \{}
+\DoxyCodeLine{664     assert(lst != NULL);}
+\DoxyCodeLine{665     }
+\DoxyCodeLine{666     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{667         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{668     }
+\DoxyCodeLine{669     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{670         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{671         }
+\DoxyCodeLine{672     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}})}
+\DoxyCodeLine{673         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a7c5ff601bc85471b4148a1c4c15787ae}{ListPushBack}}(lst, x);}
+\DoxyCodeLine{674     }
+\DoxyCodeLine{675     \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{676     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{677 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, List\+::head, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Insert\+\_\+\+Internal(), List\+Push\+Back(), List\+Verify(), Node\+::next, and Node\+::prev.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_ac56df94c6dff4c7d05afdaa7669409d2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a06dd8071a4dd95526a9b8612900dd9cb}\label{list_8c_a06dd8071a4dd95526a9b8612900dd9cb}} 
+\index{list.c@{list.c}!ListInsertBefore@{ListInsertBefore}}
+\index{ListInsertBefore@{ListInsertBefore}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListInsertBefore()}{ListInsertBefore()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} List\+Insert\+Before (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}}}]{x,  }\item[{\mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}}}]{iter }\end{DoxyParamCaption})}
+
+Insert element x before iterator. 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em x} & Element which need to insert \\
+\hline
+{\em iter} & Iterator before which need to insert element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator of new inserted element 
+\end{DoxyReturn}
+
+
+Definition at line 643 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{644 \{}
+\DoxyCodeLine{645     assert(lst != NULL);}
+\DoxyCodeLine{646     }
+\DoxyCodeLine{647     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{648         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{649     }
+\DoxyCodeLine{650     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{651         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{652     }
+\DoxyCodeLine{653     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{654     }
+\DoxyCodeLine{655     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}})}
+\DoxyCodeLine{656         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_afe4e636b84899e781aae6af9456fd88d}{ListPushFront}}(lst, x);}
+\DoxyCodeLine{657     }
+\DoxyCodeLine{658     \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, iter);}
+\DoxyCodeLine{659     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{660 \}  }
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::data, List\+::head, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Insert\+\_\+\+Internal(), List\+Push\+Front(), List\+Verify(), and Node\+::prev.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a06dd8071a4dd95526a9b8612900dd9cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7}\label{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7}} 
+\index{list.c@{list.c}!ListPopBack@{ListPopBack}}
+\index{ListPopBack@{ListPopBack}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListPopBack()}{ListPopBack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Pop\+Back (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Erase element in the end of the list 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 492 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{493 \{}
+\DoxyCodeLine{494     assert(lst != NULL);}
+\DoxyCodeLine{495     }
+\DoxyCodeLine{496     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{497         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{498     }
+\DoxyCodeLine{499     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{500         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{501     }
+\DoxyCodeLine{502     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});    }
+\DoxyCodeLine{503 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, List\+Erase\+\_\+\+Internal(), List\+Verify(), Node\+::prev, and List\+::size.
+
+
+
+Referenced by List\+Erase().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a9fa41f03d1f4dc775abb9d794364108a}\label{list_8c_a9fa41f03d1f4dc775abb9d794364108a}} 
+\index{list.c@{list.c}!ListPopFront@{ListPopFront}}
+\index{ListPopFront@{ListPopFront}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListPopFront()}{ListPopFront()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Pop\+Front (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Erase element in front of the list 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 505 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{506 \{}
+\DoxyCodeLine{507     assert(lst != NULL);}
+\DoxyCodeLine{508     }
+\DoxyCodeLine{509     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{510         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{511     }
+\DoxyCodeLine{512     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{513         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{514     }
+\DoxyCodeLine{515     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1) lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{516     }
+\DoxyCodeLine{517     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});  }
+\DoxyCodeLine{518 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::head, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, List\+Erase\+\_\+\+Internal(), List\+Verify(), and List\+::size.
+
+
+
+Referenced by List\+Erase().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a9fa41f03d1f4dc775abb9d794364108a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{list_8c_a9fa41f03d1f4dc775abb9d794364108a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a7c5ff601bc85471b4148a1c4c15787ae}\label{list_8c_a7c5ff601bc85471b4148a1c4c15787ae}} 
+\index{list.c@{list.c}!ListPushBack@{ListPushBack}}
+\index{ListPushBack@{ListPushBack}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListPushBack()}{ListPushBack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} List\+Push\+Back (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}}}]{x }\end{DoxyParamCaption})}
+
+Insert element in the end of the list 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em x} & Element which need to insert in the end \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator of the element x in list 
+\end{DoxyReturn}
+
+
+Definition at line 444 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{445 \{}
+\DoxyCodeLine{446     assert(lst != NULL);}
+\DoxyCodeLine{447         }
+\DoxyCodeLine{448     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{449         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{450             }
+\DoxyCodeLine{451     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > 0)}
+\DoxyCodeLine{452     \{}
+\DoxyCodeLine{453         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}) == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{454             \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{455         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{456             \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{457     \}}
+\DoxyCodeLine{458     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{459     \{}
+\DoxyCodeLine{460         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, 0) == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{461             \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{462         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{463             \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{464     \}}
+\DoxyCodeLine{465 \}}
+
+\end{DoxyCode}
+
+
+References List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+OK, List\+Insert\+\_\+\+Internal(), List\+Verify(), Node\+::prev, and List\+::size.
+
+
+
+Referenced by List\+Insert\+After().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a7c5ff601bc85471b4148a1c4c15787ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{list_8c_a7c5ff601bc85471b4148a1c4c15787ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_afe4e636b84899e781aae6af9456fd88d}\label{list_8c_afe4e636b84899e781aae6af9456fd88d}} 
+\index{list.c@{list.c}!ListPushFront@{ListPushFront}}
+\index{ListPushFront@{ListPushFront}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListPushFront()}{ListPushFront()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\+\_\+\+Iterator}} List\+Push\+Front (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{\mbox{\hyperlink{list_8h_a0f534bc95986c1903c81dbf8b47cadb9}{List\+\_\+\+El}}}]{x }\end{DoxyParamCaption})}
+
+Insert element in the begin of the list 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+{\em x} & Element which need to insert in the begin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator of the element x in list 
+\end{DoxyReturn}
+
+
+Definition at line 467 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{468 \{}
+\DoxyCodeLine{469     assert(lst != NULL);}
+\DoxyCodeLine{470     }
+\DoxyCodeLine{471     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{472         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{473     }
+\DoxyCodeLine{474     \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\_error}} check = \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1) lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{477     }
+\DoxyCodeLine{478     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > 0)}
+\DoxyCodeLine{479         check = \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
+\DoxyCodeLine{480     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{481         check = \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, 0);}
+\DoxyCodeLine{482     }
+\DoxyCodeLine{483     \textcolor{keywordflow}{if} (check == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{484     \{}
+\DoxyCodeLine{485         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{486         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{487     \}}
+\DoxyCodeLine{488     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{489         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{490 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+OK, List\+Insert\+\_\+\+Internal(), List\+Verify(), Node\+::prev, and List\+::size.
+
+
+
+Referenced by List\+Insert\+Before().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_afe4e636b84899e781aae6af9456fd88d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{list_8c_afe4e636b84899e781aae6af9456fd88d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}\label{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}} 
+\index{list.c@{list.c}!ListResize@{ListResize}}
+\index{ListResize@{ListResize}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListResize()}{ListResize()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Resize (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst,  }\item[{size\+\_\+t}]{new\+\_\+cap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Reallocation of list\textquotesingle{}s data memory 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Object \mbox{\hyperlink{list_8h_structList}{List}} which data will be reallocated \\
+\hline
+{\em new\+\_\+cap} & New capacity for objest lst \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144 \{}
+\DoxyCodeLine{145     assert(lst != NULL);}
+\DoxyCodeLine{146     }
+\DoxyCodeLine{147     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{148         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{149         }
+\DoxyCodeLine{150     \textcolor{keywordflow}{if} (new\_cap < lst-\/>size || }
+\DoxyCodeLine{151        (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 0 \&\& new\_cap <= lst-\/>capacity) || }
+\DoxyCodeLine{152        (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1 \&\& new\_cap < lst-\/>size))}
+\DoxyCodeLine{153         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}}; }
+\DoxyCodeLine{154     }
+\DoxyCodeLine{155     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *new\_data = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)realloc(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}, new\_cap * \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
+\DoxyCodeLine{156     }
+\DoxyCodeLine{157     \textcolor{keywordflow}{if} (new\_data == NULL)}
+\DoxyCodeLine{158         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
+\DoxyCodeLine{159     }
+\DoxyCodeLine{160     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = new\_data;}
+\DoxyCodeLine{161     }
+\DoxyCodeLine{162     \textcolor{keywordflow}{if} (new\_cap == lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{163     \{}
+\DoxyCodeLine{164         lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = new\_cap;}
+\DoxyCodeLine{165         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167     }
+\DoxyCodeLine{168     \textcolor{keywordtype}{int} last\_free = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
+\DoxyCodeLine{169     \textcolor{keywordflow}{if} (last\_free == -\/1)}
+\DoxyCodeLine{170         lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}};}
+\DoxyCodeLine{171     \textcolor{keywordflow}{else}    }
+\DoxyCodeLine{172     \{}
+\DoxyCodeLine{173         \textcolor{keywordflow}{while}(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} != -\/1)}
+\DoxyCodeLine{174             last\_free = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{175         }
+\DoxyCodeLine{176         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}};}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i < new\_cap -\/ 1; i++)}
+\DoxyCodeLine{179     \{}
+\DoxyCodeLine{180         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} free\_node = \{-\/1, -\/1, i + 1\};}
+\DoxyCodeLine{181         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i] = free\_node;}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} last\_node = \{-\/1, -\/1, -\/1\};}
+\DoxyCodeLine{184     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_cap -\/ 1] = last\_node;}
+\DoxyCodeLine{185         }
+\DoxyCodeLine{186     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = new\_cap;}
+\DoxyCodeLine{187     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{188 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, List\+::capacity, List\+::data, List\+::free, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, L\+I\+S\+T\+\_\+\+W\+R\+O\+N\+G\+\_\+\+R\+E\+A\+L\+L\+OC, List\+Verify(), Node\+::next, and List\+::size.
+
+
+
+Referenced by List\+Insert\+\_\+\+Internal(), and List\+Shrink\+To\+Fit().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a0773be9090ec6f5d77ce58ff2892b48b}\label{list_8c_a0773be9090ec6f5d77ce58ff2892b48b}} 
+\index{list.c@{list.c}!ListShrinkToFit@{ListShrinkToFit}}
+\index{ListShrinkToFit@{ListShrinkToFit}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListShrinkToFit()}{ListShrinkToFit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Shrink\+To\+Fit (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Changes capacity to size. Works O\+N\+LY in boosted list 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textquotesingle{}s error 
+\end{DoxyReturn}
+
+
+Definition at line 431 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{432 \{}
+\DoxyCodeLine{433     assert(lst != NULL);}
+\DoxyCodeLine{434     }
+\DoxyCodeLine{435     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{436         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{437     }
+\DoxyCodeLine{438     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
+\DoxyCodeLine{439         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}{ListResize}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}});}
+\DoxyCodeLine{440     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{441         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{442 \}}
+
+\end{DoxyCode}
+
+
+References List\+::boost\+\_\+mode, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, List\+Resize(), List\+Verify(), and List\+::size.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a0773be9090ec6f5d77ce58ff2892b48b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_ae5a0875e75abe50e1cdd481bbbf0e75e}\label{list_8c_ae5a0875e75abe50e1cdd481bbbf0e75e}} 
+\index{list.c@{list.c}!ListSize@{ListSize}}
+\index{ListSize@{ListSize}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListSize()}{ListSize()}}
+{\footnotesize\ttfamily size\+\_\+t List\+Size (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Check list\textquotesingle{}s size 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Pointer to list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Size of the list 
+\end{DoxyReturn}
+
+
+Definition at line 520 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{521 \{}
+\DoxyCodeLine{522     assert(lst != NULL);}
+\DoxyCodeLine{523     }
+\DoxyCodeLine{524     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{525         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{526     }
+\DoxyCodeLine{527     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{528 \}}
+
+\end{DoxyCode}
+
+
+References L\+I\+S\+T\+\_\+\+OK, List\+Verify(), and List\+::size.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{list_8c_ae5a0875e75abe50e1cdd481bbbf0e75e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{list_8c_a262ea758423a46a6ca0ff4e722e895b5}\label{list_8c_a262ea758423a46a6ca0ff4e722e895b5}} 
+\index{list.c@{list.c}!ListVerify@{ListVerify}}
+\index{ListVerify@{ListVerify}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{ListVerify()}{ListVerify()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Verify (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+T\+O\+DO\+: documentation for Isert\+After and Get\+Iterator
+
+Verify function list 
+\begin{DoxyParams}{Parameters}
+{\em lst} & Object \mbox{\hyperlink{list_8h_structList}{List}} which need to verify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another error if list bad 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file list.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} == NULL)}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         printf(\textcolor{stringliteral}{"Ban because lst-\/data == NULL\(\backslash\)n"});}
+\DoxyCodeLine{62         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}})}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66         printf(\textcolor{stringliteral}{"Ban because of overflow\(\backslash\)n"});}
+\DoxyCodeLine{67         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca7921e77a9c53d33fbbb4409623ded699}{LIST\_OVERFLOW}};}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} < 0)}
+\DoxyCodeLine{70     \{}
+\DoxyCodeLine{71         printf(\textcolor{stringliteral}{"Ban because of underflow\(\backslash\)n"});}
+\DoxyCodeLine{72         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcaa86b10fc0170e78943b601ea3a0dd031}{LIST\_UNDERFLOW}};}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75 \textcolor{preprocessor}{    \#ifdef DEBUG\_MODE}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} != -\/1)}
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78         \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{79         \textcolor{keywordtype}{int} logic\_number = 1;}
+\DoxyCodeLine{80         \textcolor{keywordflow}{while} (curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} \&\& logic\_number < lst-\/>size)}
+\DoxyCodeLine{81         \{}
+\DoxyCodeLine{82             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{83             logic\_number++;}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{86         \{}
+\DoxyCodeLine{87             printf(\textcolor{stringliteral}{"There's cycle in upstream way\(\backslash\)n"});}
+\DoxyCodeLine{88             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{89             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
+\DoxyCodeLine{90         \}}
+\DoxyCodeLine{91         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{92         logic\_number = 1;}
+\DoxyCodeLine{93         \textcolor{keywordflow}{while} (curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} \&\& logic\_number < lst-\/>size)}
+\DoxyCodeLine{94         \{}
+\DoxyCodeLine{95             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{96             logic\_number++;}
+\DoxyCodeLine{97         \}}
+\DoxyCodeLine{98         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{99         \{}
+\DoxyCodeLine{100             printf(\textcolor{stringliteral}{"There's cycle in reverse way\(\backslash\)n"});}
+\DoxyCodeLine{101             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{102             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
+\DoxyCodeLine{103         \}}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} != -\/1)}
+\DoxyCodeLine{106     \{}
+\DoxyCodeLine{107         \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
+\DoxyCodeLine{108         \textcolor{keywordtype}{int} logic\_number = 0;}
+\DoxyCodeLine{109         \textcolor{keywordflow}{while} (curr\_node != -\/1 \&\& logic\_number < lst-\/>capacity -\/ lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{110         \{}
+\DoxyCodeLine{111             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{112             logic\_number++;    }
+\DoxyCodeLine{113         \}}
+\DoxyCodeLine{114         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} -\/ lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{115         \{}
+\DoxyCodeLine{116             printf(\textcolor{stringliteral}{"There's cycle in free places\(\backslash\)n"});}
+\DoxyCodeLine{117             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{118             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
+\DoxyCodeLine{119         \}}
+\DoxyCodeLine{120     \}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{122     }
+\DoxyCodeLine{123     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{124 \}}
+
+\end{DoxyCode}
+
+
+References List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+C\+Y\+C\+LE, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, L\+I\+S\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW, L\+I\+S\+T\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW, List\+Dump(), Node\+::next, Node\+::prev, and List\+::size.
+
+
+
+Referenced by Get\+Iterator(), Get\+Iterator\+\_\+\+Value(), is\+Iterator\+Valid(), is\+List\+Boosted(), Iterator\+Decrease(), Iterator\+Increase(), List\+Begin(), List\+Boost(), List\+Construct(), List\+Destruct(), List\+End(), List\+Erase(), List\+Erase\+\_\+\+Internal(), List\+Get\+Value(), List\+Insert\+\_\+\+Internal(), List\+Insert\+After(), List\+Insert\+Before(), List\+Pop\+Back(), List\+Pop\+Front(), List\+Push\+Back(), List\+Push\+Front(), List\+Resize(), List\+Shrink\+To\+Fit(), and List\+Size().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{list_8c_a262ea758423a46a6ca0ff4e722e895b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{list_8c_a262ea758423a46a6ca0ff4e722e895b5_icgraph}
+\end{center}
+\end{figure}

@@ -61,7 +61,8 @@ Function of dumping list. Creates ListDump.log and ListDump.pdf
 List_error ListDump(struct List *lst);
 
 /*!
-Boosting list. Access by INDEX (not iterator) will be by O(1). Boost mode turns off if you insert/erase element not in the end of the list
+Boosting list. Access from GetIterator will be by O(1). Boost mode turns off if you insert/erase element not in the end of the list. 
+Works for O(n)
 \param lst Pointer to list
 \return Code of verify. LIST_OK if list OK, or another code if there's error
 */
@@ -105,31 +106,6 @@ Erase element in front of the list
 List_error ListPopFront(struct List *lst);
 
 /*!
-Get value of element in list by INDEX (not iterator)
-\param lst Pointer to list
-\param logic_number Index in list
-\return Value of the element or -1 if there's something wrong
-*/
-List_El ListGetValue(struct List *lst, long long logic_number);
-
-/*!
-Insert element x before element, indexed by logic_number. If logic_number == size => insert element in the end
-\param lst Pointer to list
-\param x Element which need to insert
-\param logic_number Index in list before which need to insert new element
-\return Code of verify. LIST_OK if list OK, or another code if there's error
-*/
-List_error ListInsert(struct List *lst, List_El x, long long logic_number);
-
-/*!
-Erase element, indexed by logic_number
-\param lst Pointer to list
-\param logic_number Index in list which need to erase
-\return Code of verify. LIST_OK if list OK, or another code if there's error
-*/
-List_error ListErase(struct List *lst, long long logic_number);
-
-/*!
 Check list's size
 \param lst Pointer to list
 \return Size of the list
@@ -144,12 +120,28 @@ Check list's boost mode
 char isListBoosted(struct List *lst);
 
 /*!
-Get value of element in list by ITERATOR (not index)
+Get iterator by index in list. Works for O(n) if list unboosted, and for O(1) of list boosted
+\param lst Pointer to list
+\param logic_number Index in list which iterator need to find
+\return Iterator by index
+*/
+List_Iterator GetIterator(struct List *lst, long long logic_number);
+
+/*!
+Get iterator by value of element. Finds first entry in list. If there's no element x returns -1
+\param lst Pointer to list
+\param x Value what need to find 
+\return Iterator of the element, or -1 if there's no such value
+*/
+List_Iterator GetIterator_Value(struct List *lst, List_El x);
+
+/*!
+Get value of element in list by iterator
 \param lst Pointer to list
 \param iter Iterator in list
 \return Value of the element or -1 if there's something wrong 
 */
-List_El ListGetValueIter(struct List *lst, List_Iterator iter);
+List_El ListGetValue(struct List *lst, List_Iterator iter);
 
 /*!
 Get iterator of the first element
@@ -182,13 +174,22 @@ Get previous iterator by present iterator
 List_Iterator IteratorDecrease(struct List *lst, List_Iterator iter);
 
 /*!
-Insert element x before iterator
+Insert element x before iterator. 
 \param lst Pointer to list
 \param x Element which need to insert
 \param iter Iterator before which need to insert element
 \return Iterator of new inserted element
 */
-List_Iterator ListInsertIter(struct List *lst, List_El x, List_Iterator iter);
+List_Iterator ListInsertBefore(struct List *lst, List_El x, List_Iterator iter);
+
+/*!
+Insert element x after iterator
+\param lst Pointer to list
+\param x Element which need to insert
+\param iter Iterator after which need to insert element
+\return Iterator of new inserted element
+*/
+List_Iterator ListInsertAfter(struct List *lst, List_El x, List_Iterator iter);
 
 /*!
 Erase element by iterator
@@ -196,4 +197,7 @@ Erase element by iterator
 \param iter Iterator which element need to erase (iterator after that is wrong)
 \return Code of verify. LIST_OK if list OK, or another code if there's error
 */
-List_error ListEraseIter(struct List *lst, List_Iterator iter);
+List_error ListErase(struct List *lst, List_Iterator iter);
+
+
+

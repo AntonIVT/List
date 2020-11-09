@@ -6,14 +6,6 @@
 #include <stdio.h>
 #include <assert.h>
 #include "list.h"
-
-/*! TODO:
-* change all NON iterators functions
-* поиск элемента по позиции
-* поиск элемента по значению 
-* insert before insert after
-* underflow(size_t)???
-*/
     
 /*! 
 Verify function list
@@ -29,14 +21,6 @@ Reallocation of list's data memory
 \return Code of verify. LIST_OK if list OK, or another code if there's error
 */  
 static List_error ListResize(struct List *lst, size_t new_cap);
-    
-/*! 
-Function of linear search of iterator
-\param lst Object List in which need to find iterator
-\param logic_number Number in lst
-\return Iterator if it's OK, or -1 if there's error
-*/  
-static List_Iterator FindArrayNumber(struct List *lst, long long logic_number);
     
 /*! 
 Insert new element before array_number element. if array_number is head of the list insert new element in the end
@@ -196,24 +180,6 @@ static List_error ListResize(struct List *lst, size_t new_cap)
         
     lst->capacity = new_cap;
     return LIST_OK;
-}
-    
-static long long FindArrayNumber(struct List *lst, long long logic_number)
-{
-    assert(lst != NULL);
-    
-    if (ListVerify(lst) != LIST_OK)
-        return -1;
-    
-    if (logic_number >= lst->size || logic_number < 0)
-        return -1;
-    
-    int array_number = lst->head; 
-    
-    for (int i = 0; i < logic_number; i++)
-        array_number = lst->data[array_number].next;
-    
-    return array_number;
 }
     
 static List_error ListInsert_Internal(struct List *lst, List_El x, long long array_number)
@@ -546,61 +512,6 @@ List_error ListPopFront(struct List *lst)
     return ListErase_Internal(lst, lst->head);  
 }
     
-List_El ListGetValue(struct List *lst, long long logic_number)
-{
-    assert(lst != NULL);
-    
-    if (ListVerify(lst) != LIST_OK)
-        return -1;
-        
-    if (lst->boost_mode == 0)
-        return lst->data[FindArrayNumber(lst, logic_number)].value;
-    else
-        return lst->data[logic_number].value;    
-}
-    
-List_error ListInsert(struct List *lst, List_El x, long long logic_number)
-{
-    assert(lst != NULL);
-    
-    if (ListVerify(lst) != LIST_OK)
-        return LIST_ERROR;
-        
-    if (logic_number > lst->size || logic_number < 0)
-        return LIST_WRONG_INDEX;
-        
-    if (logic_number == lst->size)
-        ListPushBack(lst, x);
-    
-    lst->boost_mode = 0;
-    
-    if (logic_number == 0)
-        ListPushFront(lst, x);
-    
-    return ListInsert_Internal(lst, x, FindArrayNumber(lst, logic_number));
-}
-    
-List_error ListErase(struct List *lst, long long logic_number)
-{
-    assert(lst != NULL);
-    
-    if (ListVerify(lst) != LIST_OK)
-        return LIST_ERROR;
-    
-    if (logic_number >= lst->size || logic_number < 0)
-        return LIST_WRONG_INDEX;
-    
-    if (logic_number == lst->size - 1)
-        return ListPopBack(lst);
-    
-    lst->boost_mode = 0;
-    
-    if (logic_number == 0)
-        return ListPopFront(lst);
-    
-    return ListErase_Internal(lst, FindArrayNumber(lst, logic_number));
-}
-    
 size_t ListSize(struct List *lst)
 {
     assert(lst != NULL);
@@ -621,7 +532,51 @@ char isListBoosted(struct List *lst)
     return lst->boost_mode;
 }
     
-List_El ListGetValueIter(struct List *lst, List_Iterator iter)
+List_Iterator GetIterator(struct List *lst, long long logic_number)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    if (logic_number >= lst->size || logic_number < 0)
+        return -1;
+    
+    if (lst->boost_mode == 1)
+        return logic_number;
+    
+    List_Iterator iterator = lst->head; 
+    
+    for (int i = 0; i < logic_number; i++)
+        iterator = lst->data[iterator].next;
+    
+    return iterator;
+}    
+    
+List_Iterator GetIterator_Value(struct List *lst, List_El x)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    List_Iterator iterator = -1;
+    
+    List_Iterator curr_node = lst->head;
+    
+    do{
+        if (lst->data[curr_node].value == x)
+        {
+            iterator = curr_node;
+            break;
+        }
+        curr_node = lst->data[curr_node].next;
+    } while(curr_node != lst->head);
+    
+    return iterator;
+}
+
+List_El ListGetValue(struct List *lst, List_Iterator iter)
 {
     assert(lst != NULL);
     
@@ -680,7 +635,7 @@ List_Iterator IteratorDecrease(struct List *lst, List_Iterator iter)
         return -1;
 }
 
-List_Iterator ListInsertIter(struct List *lst, List_El x, List_Iterator iter)
+List_Iterator ListInsertBefore(struct List *lst, List_El x, List_Iterator iter)
 {
     assert(lst != NULL);
     
@@ -693,13 +648,30 @@ List_Iterator ListInsertIter(struct List *lst, List_El x, List_Iterator iter)
     lst->boost_mode = 0;
     
     if (iter == lst->head)
-        return ListPushBack(lst, x);
+        return ListPushFront(lst, x);
     
     ListInsert_Internal(lst, x, iter);
     return lst->data[iter].prev;
 }  
 
-List_error ListEraseIter(struct List *lst, List_Iterator iter)
+List_Iterator ListInsertAfter(struct List *lst, List_El x, List_Iterator iter)
+{
+    assert(lst != NULL);
+    
+    if (ListVerify(lst) != LIST_OK)
+        return -1;
+    
+    if (!isIteratorValid(lst, iter))
+        return -1;
+        
+    if (iter == lst->data[lst->head].prev)
+        return ListPushBack(lst, x);
+    
+    ListInsert_Internal(lst, x, lst->data[iter].next);
+    return lst->data[iter].next;
+}
+
+List_error ListErase(struct List *lst, List_Iterator iter)
 {
     assert(lst != NULL);
     
