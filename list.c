@@ -1,22 +1,70 @@
+/**
+ * @file
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
 #include "list.h"
 
+/*! TODO:
+* change all NON iterators functions
+* поиск элемента по позиции
+* поиск элемента по значению 
+* insert before insert after
+* underflow(size_t)???
+*/
+    
+/*! 
+Verify function list
+\param lst Object List which need to verify
+\return Code of verify. LIST_OK if list OK, or another error if list bad
+*/  
 static List_error ListVerify(struct List *lst);
-
+    
+/*! 
+Reallocation of list's data memory
+\param lst Object List which data will be reallocated
+\param new_cap New capacity for objest lst
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/  
 static List_error ListResize(struct List *lst, size_t new_cap);
-
-static long long FindArrayNumber(struct List *lst, long long logic_number);
-
+    
+/*! 
+Function of linear search of iterator
+\param lst Object List in which need to find iterator
+\param logic_number Number in lst
+\return Iterator if it's OK, or -1 if there's error
+*/  
+static List_Iterator FindArrayNumber(struct List *lst, long long logic_number);
+    
+/*! 
+Insert new element before array_number element. if array_number is head of the list insert new element in the end
+\param lst List where need to insert element
+\param x Element of list which need to insert
+\param array_number Number in array (iterator actually) before which need to insert element
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/  
 static List_error ListInsert_Internal(struct List *lst, List_El x, long long array_number);
-
+    
+/*!
+Erase element by array_number.
+\param lst List where need to erase element
+\param array_number Number in array(iterator actually) which need to erase
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 static List_error ListErase_Internal(struct List *lst, long long array_number);
-
+    
+/*!
+Checking validity of iterator
+\param lst List where need to check iterator
+\param iter Iterator in list which need to check
+\return 1 if iterator valid, or 0 if it's not
+*/
 static char isIteratorValid(struct List *lst, List_Iterator iter);
-
+    
 #define DEBUG_MODE
-
+    
 static List_error ListVerify(struct List *lst)
 {
     if (lst->data == NULL)
@@ -85,7 +133,7 @@ static List_error ListVerify(struct List *lst)
     
     return LIST_OK;
 }
-
+    
 static char isIteratorValid(struct List *lst, List_Iterator iter)
 {
     assert(lst != NULL);
@@ -102,7 +150,7 @@ static char isIteratorValid(struct List *lst, List_Iterator iter)
     else
         return 1;
 }
-
+    
 static List_error ListResize(struct List *lst, size_t new_cap)
 {
     assert(lst != NULL);
@@ -149,7 +197,7 @@ static List_error ListResize(struct List *lst, size_t new_cap)
     lst->capacity = new_cap;
     return LIST_OK;
 }
-
+    
 static long long FindArrayNumber(struct List *lst, long long logic_number)
 {
     assert(lst != NULL);
@@ -167,7 +215,7 @@ static long long FindArrayNumber(struct List *lst, long long logic_number)
     
     return array_number;
 }
-
+    
 static List_error ListInsert_Internal(struct List *lst, List_El x, long long array_number)
 {
     assert(lst != NULL);
@@ -210,7 +258,7 @@ static List_error ListInsert_Internal(struct List *lst, List_El x, long long arr
     
     return LIST_OK;
 }
-
+    
 static List_error ListErase_Internal(struct List *lst, long long array_number)
 {
     assert(lst != NULL);
@@ -252,7 +300,7 @@ static List_error ListErase_Internal(struct List *lst, long long array_number)
     
     return LIST_OK;
 }
-
+    
 List_error ListConstruct(struct List *lst, size_t capacity)
 {
     assert(lst != NULL);
@@ -280,7 +328,7 @@ List_error ListConstruct(struct List *lst, size_t capacity)
     
     return ListVerify(lst);
 }
-
+    
 List_error ListDestruct(struct List *lst)
 {
     assert(lst != NULL);
@@ -297,7 +345,7 @@ List_error ListDestruct(struct List *lst)
     
     return ListVerify(lst);
 }
-
+    
 List_error ListDump(struct List *lst)
 {
     assert(lst != NULL);
@@ -368,7 +416,7 @@ List_error ListDump(struct List *lst)
     
     return LIST_OK;
 }
-
+    
 List_error ListBoost(struct List *lst)
 {
     assert(lst != NULL);
@@ -408,7 +456,7 @@ List_error ListBoost(struct List *lst)
         
     return LIST_OK;
 }
-
+    
 List_error ListShrinkToFit(struct List *lst)
 {
     assert(lst != NULL);
@@ -421,7 +469,7 @@ List_error ListShrinkToFit(struct List *lst)
     else
         return LIST_ERROR;
 }
-
+    
 List_Iterator ListPushBack(struct List *lst, List_El x)
 {
     assert(lst != NULL);
@@ -444,7 +492,7 @@ List_Iterator ListPushBack(struct List *lst, List_El x)
             return -1;
     }
 }
-
+    
 List_Iterator ListPushFront(struct List *lst, List_El x)
 {
     assert(lst != NULL);
@@ -469,7 +517,7 @@ List_Iterator ListPushFront(struct List *lst, List_El x)
     else 
         return -1;
 }
-
+    
 List_error ListPopBack(struct List *lst)
 {
     assert(lst != NULL);
@@ -482,7 +530,7 @@ List_error ListPopBack(struct List *lst)
     
     return ListErase_Internal(lst, lst->data[lst->head].prev);    
 }
-
+    
 List_error ListPopFront(struct List *lst)
 {
     assert(lst != NULL);
@@ -497,7 +545,7 @@ List_error ListPopFront(struct List *lst)
     
     return ListErase_Internal(lst, lst->head);  
 }
-
+    
 List_El ListGetValue(struct List *lst, long long logic_number)
 {
     assert(lst != NULL);
@@ -510,7 +558,7 @@ List_El ListGetValue(struct List *lst, long long logic_number)
     else
         return lst->data[logic_number].value;    
 }
-
+    
 List_error ListInsert(struct List *lst, List_El x, long long logic_number)
 {
     assert(lst != NULL);
@@ -531,7 +579,7 @@ List_error ListInsert(struct List *lst, List_El x, long long logic_number)
     
     return ListInsert_Internal(lst, x, FindArrayNumber(lst, logic_number));
 }
-
+    
 List_error ListErase(struct List *lst, long long logic_number)
 {
     assert(lst != NULL);
@@ -552,7 +600,7 @@ List_error ListErase(struct List *lst, long long logic_number)
     
     return ListErase_Internal(lst, FindArrayNumber(lst, logic_number));
 }
-
+    
 size_t ListSize(struct List *lst)
 {
     assert(lst != NULL);
@@ -572,7 +620,7 @@ char isListBoosted(struct List *lst)
     
     return lst->boost_mode;
 }
-
+    
 List_El ListGetValueIter(struct List *lst, List_Iterator iter)
 {
     assert(lst != NULL);
@@ -671,4 +719,5 @@ List_error ListEraseIter(struct List *lst, List_Iterator iter)
     
     return ListErase_Internal(lst, iter);
 }
+
 

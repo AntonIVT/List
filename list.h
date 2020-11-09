@@ -1,3 +1,7 @@
+/**
+ * @file
+ */
+
 #pragma once
 
 #include <stdlib.h>
@@ -34,44 +38,146 @@ typedef enum list_error_en
     LIST_CYCLE = 6
 } List_error;
 
+/*!
+Construct list structure
+\param lst Pointer to list
+\param capacity Capacity of the list in the begining
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListConstruct(struct List *lst, size_t capacity);
 
+/*!
+Destruct list structure
+\param lst Pointer to list
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListDestruct(struct List *lst);
 
+/*!
+Function of dumping list. Creates ListDump.log and ListDump.pdf
+\param lst Pointer to list
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListDump(struct List *lst);
 
+/*!
+Boosting list. Access by INDEX (not iterator) will be by O(1). Boost mode turns off if you insert/erase element not in the end of the list
+\param lst Pointer to list
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListBoost(struct List *lst);
 
+/*!
+Changes capacity to size. Works ONLY in boosted list
+\param lst Pointer to list
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListShrinkToFit(struct List *lst);
 
+/*!
+Insert element in the end of the list
+\param lst Pointer to list
+\param x Element which need to insert in the end
+\return Iterator of the element x in list
+*/
 List_Iterator ListPushBack(struct List *lst, List_El x);
 
+/*!
+Insert element in the begin of the list
+\param lst Pointer to list
+\param x Element which need to insert in the begin
+\return Iterator of the element x in list
+*/
 List_Iterator ListPushFront(struct List *lst, List_El x);
 
+/*!
+Erase element in the end of the list
+\param lst Pointer to list
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListPopBack(struct List *lst);
 
+/*!
+Erase element in front of the list
+\param lst Pointer to list
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListPopFront(struct List *lst);
 
+/*!
+Get value of element in list by INDEX (not iterator)
+\param lst Pointer to list
+\param logic_number Index in list
+\return Value of the element or -1 if there's something wrong
+*/
 List_El ListGetValue(struct List *lst, long long logic_number);
 
+/*!
+Insert element x before element, indexed by logic_number. If logic_number == size => insert element in the end
+\param lst Pointer to list
+\param x Element which need to insert
+\param logic_number Index in list before which need to insert new element
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListInsert(struct List *lst, List_El x, long long logic_number);
 
+/*!
+Erase element, indexed by logic_number
+\param lst Pointer to list
+\param logic_number Index in list which need to erase
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 List_error ListErase(struct List *lst, long long logic_number);
 
+/*!
+Check list's size
+\param lst Pointer to list
+\return Size of the list
+*/
 size_t ListSize(struct List *lst);
 
+/*!
+Check list's boost mode
+\param lst Pointer to list
+\return 1 if list boosted, 0 if it's not
+*/
 char isListBoosted(struct List *lst);
 
+/*!
+Get value of element in list by ITERATOR (not index)
+\param lst Pointer to list
+\param iter Iterator in list
+\return Value of the element or -1 if there's something wrong 
+*/
 List_El ListGetValueIter(struct List *lst, List_Iterator iter);
 
+/*!
+
+*/
 List_Iterator ListBegin(struct List *lst);
 
+/*!
+
+*/
 List_Iterator ListEnd(struct List *lst);
 
+/*!
+
+*/
 List_Iterator IteratorIncrease(struct List *lst, List_Iterator iter);
 
+/*!
+
+*/
 List_Iterator IteratorDecrease(struct List *lst, List_Iterator iter);
 
+/*!
+
+*/
 List_Iterator ListInsertIter(struct List *lst, List_El x, List_Iterator iter);
 
+/*!
+
+*/
 List_error ListEraseIter(struct List *lst, List_Iterator iter);
+

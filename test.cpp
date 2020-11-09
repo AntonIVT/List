@@ -92,6 +92,27 @@ TEST(insert_test, test1)
     ListDestruct(&list);
 }
 
+TEST(insert_test, tes2)
+{
+    struct List list = {0};
+    ListConstruct(&list, 0);
+    
+    ListBoost(&list);
+    
+    ListPushBack(&list, 1);
+    ASSERT_EQ(LIST_OK, ListPopFront(&list));
+    
+    List_Iterator iterator = ListPushFront(&list, 2);
+    ASSERT_EQ(2, ListIt(iterator));
+    ASSERT_EQ(2, List(0));
+    
+    ASSERT_EQ(LIST_OK, ListEraseIter(&list, iterator));
+           
+    ListDump(&list);
+    
+    ListDestruct(&list);
+}
+
 TEST(pop_front_test, test1)
 {
     struct List list = {0};
