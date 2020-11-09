@@ -152,32 +152,48 @@ Get value of element in list by ITERATOR (not index)
 List_El ListGetValueIter(struct List *lst, List_Iterator iter);
 
 /*!
-
+Get iterator of the first element
+\param lst Pointer to list
+\return Iterator of the first element
 */
 List_Iterator ListBegin(struct List *lst);
 
 /*!
-
+Get iterator of the last element
+\param lst Pointer to list
+\return Iterator of the last element
 */
 List_Iterator ListEnd(struct List *lst);
 
 /*!
-
+Get next iterator by present iterator
+\param lst Pointer to list
+\param iter Present iterator
+\return Next iterator
 */
 List_Iterator IteratorIncrease(struct List *lst, List_Iterator iter);
 
 /*!
-
+Get previous iterator by present iterator
+\param lst Pointer to list
+\param iter Present iterator
+\return Previoust iterator
 */
 List_Iterator IteratorDecrease(struct List *lst, List_Iterator iter);
 
 /*!
-
+Insert element x before iterator
+\param lst Pointer to list
+\param x Element which need to insert
+\param iter Iterator before which need to insert element
+\return Iterator of new inserted element
 */
 List_Iterator ListInsertIter(struct List *lst, List_El x, List_Iterator iter);
 
 /*!
-
+Erase element by iterator
+\param lst Pointer to list
+\param iter Iterator which element need to erase (iterator after that is wrong)
+\return Code of verify. LIST_OK if list OK, or another code if there's error
 */
 List_error ListEraseIter(struct List *lst, List_Iterator iter);
-
