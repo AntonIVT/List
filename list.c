@@ -1,20 +1,61 @@
+/**
+ * @file
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
 #include "list.h"
 
+/*! 
+Verify function list
+\param lst Object List which need to verify
+\return Code of verify. LIST_OK if list OK, or another error if list bad
+*/  
 static List_error ListVerify(struct List *lst);
-
+    
+/*! 
+Reallocation of list's data memory
+\param lst Object List which data will be reallocated
+\param new_cap New capacity for objest lst
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/  
 static List_error ListResize(struct List *lst, size_t new_cap);
-
-static long long FindArrayNumber(struct List *lst, long long logic_number);
-
+    
+/*! 
+Function of linear search of iterator
+\param lst Object List in which need to find iterator
+\param logic_number Number in lst
+\return Iterator if it's OK, or -1 if there's error
+*/  
+static List_Iterator FindArrayNumber(struct List *lst, long long logic_number);
+    
+/*! 
+Insert new element before array_number element. if array_number is head of the list insert new element in the end
+\param lst List where need to insert element
+\param x Element of list which need to insert
+\param array_number Number in array (iterator actually) before which need to insert element
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/  
 static List_error ListInsert_Internal(struct List *lst, List_El x, long long array_number);
-
+    
+/*!
+Erase element by array_number.
+\param lst List where need to erase element
+\param array_number Number in array(iterator actually) which need to erase
+\return Code of verify. LIST_OK if list OK, or another code if there's error
+*/
 static List_error ListErase_Internal(struct List *lst, long long array_number);
-
+    
+/*!
+Checking validity of iterator
+\param lst List where need to check iterator
+\param iter Iterator in list which need to check
+\return 1 if iterator valid, or 0 if it's not
+*/
 static char isIteratorValid(struct List *lst, List_Iterator iter);
-
+    
+#define DEBUG_MODE
 #define DEBUG_MODE
 
 static List_error ListVerify(struct List *lst)
