@@ -32,9 +32,8 @@ typedef enum list_error_en
     LIST_OK = 0,
     LIST_ERROR = 1,
     LIST_OVERFLOW = 2,
-    LIST_UNDERFLOW = 3,
-    LIST_WRONG_INDEX = 4,
-    LIST_WRONG_REALLOC = 5,
+    LIST_WRONG_INDEX = 3,
+    LIST_WRONG_REALLOC = 4,
     LIST_CYCLE = 6
 } List_error;
 

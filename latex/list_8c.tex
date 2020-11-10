@@ -82,7 +82,7 @@ char \mbox{\hyperlink{list_8c_af15780d26607314e4766307f392dce48}{is\+List\+Boost
 
 
 
-Definition at line 56 of file list.\+c.
+Definition at line 51 of file list.\+c.
 
 
 
@@ -105,37 +105,36 @@ Iterator by index
 \end{DoxyReturn}
 
 
-Definition at line 540 of file list.\+c.
+Definition at line 530 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{541 \{}
-\DoxyCodeLine{542     assert(lst != NULL);}
-\DoxyCodeLine{543     }
-\DoxyCodeLine{544     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{545         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{546     }
-\DoxyCodeLine{547     \textcolor{keywordflow}{if} (logic\_number >= lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} || logic\_number < 0)}
-\DoxyCodeLine{548         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{549     }
-\DoxyCodeLine{550     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
-\DoxyCodeLine{551         \textcolor{keywordflow}{return} logic\_number;}
-\DoxyCodeLine{552     }
-\DoxyCodeLine{553     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} iterator = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}; }
-\DoxyCodeLine{554     }
-\DoxyCodeLine{555     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < logic\_number; i++)}
-\DoxyCodeLine{556         iterator = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iterator].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{557     }
-\DoxyCodeLine{558     \textcolor{keywordflow}{return} iterator;}
-\DoxyCodeLine{559 \}    }
+\DoxyCodeLine{531 \{}
+\DoxyCodeLine{532     assert(lst != NULL);}
+\DoxyCodeLine{533     }
+\DoxyCodeLine{534     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{535         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{536     }
+\DoxyCodeLine{537     \textcolor{keywordflow}{if} (logic\_number >= lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} || logic\_number < 0)}
+\DoxyCodeLine{538         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{539     }
+\DoxyCodeLine{540     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
+\DoxyCodeLine{541         \textcolor{keywordflow}{return} logic\_number;}
+\DoxyCodeLine{542     }
+\DoxyCodeLine{543     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} iterator = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}; }
+\DoxyCodeLine{544     }
+\DoxyCodeLine{545     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < logic\_number; i++)}
+\DoxyCodeLine{546         iterator = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iterator].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{547     }
+\DoxyCodeLine{548     \textcolor{keywordflow}{return} iterator;}
+\DoxyCodeLine{549 \}    }
 
 \end{DoxyCode}
 
 
 References List\+::boost\+\_\+mode, List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+OK, List\+Verify(), Node\+::next, and List\+::size.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -160,39 +159,38 @@ Iterator of the element, or -\/1 if there\textquotesingle{}s no such value
 \end{DoxyReturn}
 
 
-Definition at line 561 of file list.\+c.
+Definition at line 551 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{562 \{}
-\DoxyCodeLine{563     assert(lst != NULL);}
-\DoxyCodeLine{564     }
-\DoxyCodeLine{565     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{566         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{567     }
-\DoxyCodeLine{568     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} iterator = -\/1;}
-\DoxyCodeLine{569     }
-\DoxyCodeLine{570     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
-\DoxyCodeLine{571     }
-\DoxyCodeLine{572     \textcolor{keywordflow}{do}\{}
-\DoxyCodeLine{573         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}} == x)}
-\DoxyCodeLine{574         \{}
-\DoxyCodeLine{575             iterator = curr\_node;}
-\DoxyCodeLine{576             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{577         \}}
-\DoxyCodeLine{578         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{579     \} \textcolor{keywordflow}{while}(curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
-\DoxyCodeLine{580     }
-\DoxyCodeLine{581     \textcolor{keywordflow}{return} iterator;}
-\DoxyCodeLine{582 \}}
+\DoxyCodeLine{552 \{}
+\DoxyCodeLine{553     assert(lst != NULL);}
+\DoxyCodeLine{554     }
+\DoxyCodeLine{555     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{556         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{557     }
+\DoxyCodeLine{558     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} iterator = -\/1;}
+\DoxyCodeLine{559     }
+\DoxyCodeLine{560     \mbox{\hyperlink{list_8h_a4c9551396b5a17fb612deea3068fe122}{List\_Iterator}} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{561     }
+\DoxyCodeLine{562     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{563         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}} == x)}
+\DoxyCodeLine{564         \{}
+\DoxyCodeLine{565             iterator = curr\_node;}
+\DoxyCodeLine{566             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{567         \}}
+\DoxyCodeLine{568         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{569     \} \textcolor{keywordflow}{while}(curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
+\DoxyCodeLine{570     }
+\DoxyCodeLine{571     \textcolor{keywordflow}{return} iterator;}
+\DoxyCodeLine{572 \}}
 
 \end{DoxyCode}
 
 
 References List\+::data, List\+::head, L\+I\+S\+T\+\_\+\+OK, List\+Verify(), Node\+::next, and Node\+::value.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -217,25 +215,25 @@ Checking validity of iterator
 \end{DoxyReturn}
 
 
-Definition at line 126 of file list.\+c.
+Definition at line 116 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{127 \{}
-\DoxyCodeLine{128     assert(lst != NULL);}
-\DoxyCodeLine{129     }
-\DoxyCodeLine{130     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{131         \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{132     }
-\DoxyCodeLine{133     \textcolor{keywordflow}{if} (iter < 0 || iter >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} || lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
-\DoxyCodeLine{134     \{   }
-\DoxyCodeLine{135         printf(\textcolor{stringliteral}{"Wrong iterator\(\backslash\)n"});}
-\DoxyCodeLine{136         \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
-\DoxyCodeLine{137         \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{138     \}}
-\DoxyCodeLine{139     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{140         \textcolor{keywordflow}{return} 1;}
-\DoxyCodeLine{141 \}}
+\DoxyCodeLine{117 \{}
+\DoxyCodeLine{118     assert(lst != NULL);}
+\DoxyCodeLine{119     }
+\DoxyCodeLine{120     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{121         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{122     }
+\DoxyCodeLine{123     \textcolor{keywordflow}{if} (iter < 0 || iter >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} || lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
+\DoxyCodeLine{124     \{   }
+\DoxyCodeLine{125         printf(\textcolor{stringliteral}{"Wrong iterator\(\backslash\)n"});}
+\DoxyCodeLine{126         \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{127         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{130         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{131 \}}
 
 \end{DoxyCode}
 
@@ -253,8 +251,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{list_8c_adfd8599d25d547782ffb93f50313c092_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -277,18 +274,18 @@ Check list\textquotesingle{}s boost mode
 \end{DoxyReturn}
 
 
-Definition at line 530 of file list.\+c.
+Definition at line 520 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{531 \{}
-\DoxyCodeLine{532     assert(lst != NULL);}
-\DoxyCodeLine{533     }
-\DoxyCodeLine{534     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{535         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{536     }
-\DoxyCodeLine{537     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}};}
-\DoxyCodeLine{538 \}}
+\DoxyCodeLine{521 \{}
+\DoxyCodeLine{522     assert(lst != NULL);}
+\DoxyCodeLine{523     }
+\DoxyCodeLine{524     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{525         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{526     }
+\DoxyCodeLine{527     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}};}
+\DoxyCodeLine{528 \}}
 
 \end{DoxyCode}
 
@@ -320,21 +317,21 @@ Previoust iterator
 \end{DoxyReturn}
 
 
-Definition at line 630 of file list.\+c.
+Definition at line 620 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{631 \{}
-\DoxyCodeLine{632     assert(lst != NULL);}
-\DoxyCodeLine{633     }
-\DoxyCodeLine{634     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{635         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{636         }
-\DoxyCodeLine{637     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
-\DoxyCodeLine{638         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{639     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{640         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{641 \}}
+\DoxyCodeLine{621 \{}
+\DoxyCodeLine{622     assert(lst != NULL);}
+\DoxyCodeLine{623     }
+\DoxyCodeLine{624     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{625         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{626         }
+\DoxyCodeLine{627     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{628         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{629     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{630         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{631 \}}
 
 \end{DoxyCode}
 
@@ -366,21 +363,21 @@ Next iterator
 \end{DoxyReturn}
 
 
-Definition at line 617 of file list.\+c.
+Definition at line 607 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{618 \{}
-\DoxyCodeLine{619     assert(lst != NULL);}
-\DoxyCodeLine{620     }
-\DoxyCodeLine{621     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{622         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{623     }
-\DoxyCodeLine{624     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
-\DoxyCodeLine{625         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{626     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{627         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{628 \}}
+\DoxyCodeLine{608 \{}
+\DoxyCodeLine{609     assert(lst != NULL);}
+\DoxyCodeLine{610     }
+\DoxyCodeLine{611     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{612         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{613     }
+\DoxyCodeLine{614     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{615         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{616     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{617         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{618 \}}
 
 \end{DoxyCode}
 
@@ -410,18 +407,18 @@ Iterator of the first element
 \end{DoxyReturn}
 
 
-Definition at line 597 of file list.\+c.
+Definition at line 587 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{598 \{}
-\DoxyCodeLine{599     assert(lst != NULL);}
-\DoxyCodeLine{600     }
-\DoxyCodeLine{601     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{602         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{603     }
-\DoxyCodeLine{604     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
-\DoxyCodeLine{605 \}}
+\DoxyCodeLine{588 \{}
+\DoxyCodeLine{589     assert(lst != NULL);}
+\DoxyCodeLine{590     }
+\DoxyCodeLine{591     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{592         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{593     }
+\DoxyCodeLine{594     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{595 \}}
 
 \end{DoxyCode}
 
@@ -451,48 +448,48 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 391 of file list.\+c.
+Definition at line 381 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{392 \{}
-\DoxyCodeLine{393     assert(lst != NULL);}
-\DoxyCodeLine{394     }
-\DoxyCodeLine{395     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{396         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{397     }
-\DoxyCodeLine{398     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
-\DoxyCodeLine{399         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{400     }
-\DoxyCodeLine{401     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
-\DoxyCodeLine{402     \{}
-\DoxyCodeLine{403         lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 1;}
-\DoxyCodeLine{404         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{405     \}}
-\DoxyCodeLine{406     }
-\DoxyCodeLine{407     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *new\_data = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)calloc(lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
-\DoxyCodeLine{408     }
-\DoxyCodeLine{409     \textcolor{keywordflow}{if} (new\_data == NULL)}
-\DoxyCodeLine{410         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
-\DoxyCodeLine{411     }
-\DoxyCodeLine{412     \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
-\DoxyCodeLine{413     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}; i++)}
-\DoxyCodeLine{414     \{}
-\DoxyCodeLine{415         new\_data[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}};}
-\DoxyCodeLine{416         new\_data[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = (i + 1) \% lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
-\DoxyCodeLine{417         new\_data[i].prev = (i -\/ 1 + lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}) \% lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
-\DoxyCodeLine{418         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{419     \}}
-\DoxyCodeLine{420     }
-\DoxyCodeLine{421     free(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}});}
-\DoxyCodeLine{422     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = new\_data;}
-\DoxyCodeLine{423     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
-\DoxyCodeLine{424     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = -\/1;}
-\DoxyCodeLine{425     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = 0;}
-\DoxyCodeLine{426     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 1;}
-\DoxyCodeLine{427         }
-\DoxyCodeLine{428     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{429 \}}
+\DoxyCodeLine{382 \{}
+\DoxyCodeLine{383     assert(lst != NULL);}
+\DoxyCodeLine{384     }
+\DoxyCodeLine{385     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{386         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{387     }
+\DoxyCodeLine{388     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
+\DoxyCodeLine{389         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{390     }
+\DoxyCodeLine{391     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{392     \{}
+\DoxyCodeLine{393         lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 1;}
+\DoxyCodeLine{394         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{395     \}}
+\DoxyCodeLine{396     }
+\DoxyCodeLine{397     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *new\_data = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)calloc(lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
+\DoxyCodeLine{398     }
+\DoxyCodeLine{399     \textcolor{keywordflow}{if} (new\_data == NULL)}
+\DoxyCodeLine{400         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
+\DoxyCodeLine{401     }
+\DoxyCodeLine{402     \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{403     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}; i++)}
+\DoxyCodeLine{404     \{}
+\DoxyCodeLine{405         new\_data[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}};}
+\DoxyCodeLine{406         new\_data[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = (i + 1) \% lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{407         new\_data[i].prev = (i -\/ 1 + lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}) \% lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{408         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{409     \}}
+\DoxyCodeLine{410     }
+\DoxyCodeLine{411     free(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}});}
+\DoxyCodeLine{412     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = new\_data;}
+\DoxyCodeLine{413     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{414     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = -\/1;}
+\DoxyCodeLine{415     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = 0;}
+\DoxyCodeLine{416     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 1;}
+\DoxyCodeLine{417         }
+\DoxyCodeLine{418     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{419 \}}
 
 \end{DoxyCode}
 
@@ -524,36 +521,36 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 275 of file list.\+c.
+Definition at line 265 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{276 \{}
-\DoxyCodeLine{277     assert(lst != NULL);}
-\DoxyCodeLine{278     }
-\DoxyCodeLine{279     \textcolor{keywordflow}{if} (capacity <= 0)}
-\DoxyCodeLine{280         capacity = 1;}
-\DoxyCodeLine{281     }
-\DoxyCodeLine{282     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)calloc(capacity, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
-\DoxyCodeLine{283     }
-\DoxyCodeLine{284     assert(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} != NULL);}
-\DoxyCodeLine{285     }
-\DoxyCodeLine{286     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = 0;}
-\DoxyCodeLine{287     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < capacity -\/ 1; i++)}
-\DoxyCodeLine{288     \{}
-\DoxyCodeLine{289         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} free\_node = \{-\/1, -\/1, i + 1\};}
-\DoxyCodeLine{290         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i] = free\_node;}
-\DoxyCodeLine{291     \}}
-\DoxyCodeLine{292     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} last\_node = \{-\/1, -\/1 , -\/1\};}
-\DoxyCodeLine{293     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[capacity -\/ 1] = last\_node;}
-\DoxyCodeLine{294     }
-\DoxyCodeLine{295     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
-\DoxyCodeLine{296     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = capacity;}
-\DoxyCodeLine{297     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} = 0;}
-\DoxyCodeLine{298     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
-\DoxyCodeLine{299     }
-\DoxyCodeLine{300     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst);}
-\DoxyCodeLine{301 \}}
+\DoxyCodeLine{266 \{}
+\DoxyCodeLine{267     assert(lst != NULL);}
+\DoxyCodeLine{268     }
+\DoxyCodeLine{269     \textcolor{keywordflow}{if} (capacity <= 0)}
+\DoxyCodeLine{270         capacity = 1;}
+\DoxyCodeLine{271     }
+\DoxyCodeLine{272     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)calloc(capacity, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
+\DoxyCodeLine{273     }
+\DoxyCodeLine{274     assert(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} != NULL);}
+\DoxyCodeLine{275     }
+\DoxyCodeLine{276     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = 0;}
+\DoxyCodeLine{277     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < capacity -\/ 1; i++)}
+\DoxyCodeLine{278     \{}
+\DoxyCodeLine{279         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} free\_node = \{-\/1, -\/1, i + 1\};}
+\DoxyCodeLine{280         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i] = free\_node;}
+\DoxyCodeLine{281     \}}
+\DoxyCodeLine{282     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} last\_node = \{-\/1, -\/1 , -\/1\};}
+\DoxyCodeLine{283     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[capacity -\/ 1] = last\_node;}
+\DoxyCodeLine{284     }
+\DoxyCodeLine{285     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
+\DoxyCodeLine{286     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = capacity;}
+\DoxyCodeLine{287     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} = 0;}
+\DoxyCodeLine{288     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{289     }
+\DoxyCodeLine{290     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst);}
+\DoxyCodeLine{291 \}}
 
 \end{DoxyCode}
 
@@ -583,25 +580,25 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 303 of file list.\+c.
+Definition at line 293 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{304 \{}
-\DoxyCodeLine{305     assert(lst != NULL);}
+\DoxyCodeLine{294 \{}
+\DoxyCodeLine{295     assert(lst != NULL);}
+\DoxyCodeLine{296     }
+\DoxyCodeLine{297     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{298         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{299     }
+\DoxyCodeLine{300     free(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}});}
+\DoxyCodeLine{301     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = 0;}
+\DoxyCodeLine{302     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} =  0;}
+\DoxyCodeLine{303     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
+\DoxyCodeLine{304     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = -\/1;}
+\DoxyCodeLine{305     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} =  0;}
 \DoxyCodeLine{306     }
-\DoxyCodeLine{307     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{308         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{309     }
-\DoxyCodeLine{310     free(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}});}
-\DoxyCodeLine{311     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = 0;}
-\DoxyCodeLine{312     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} =  0;}
-\DoxyCodeLine{313     lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
-\DoxyCodeLine{314     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = -\/1;}
-\DoxyCodeLine{315     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} =  0;}
-\DoxyCodeLine{316     }
-\DoxyCodeLine{317     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst);}
-\DoxyCodeLine{318 \}}
+\DoxyCodeLine{307     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst);}
+\DoxyCodeLine{308 \}}
 
 \end{DoxyCode}
 
@@ -631,79 +628,79 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 320 of file list.\+c.
+Definition at line 310 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{321 \{}
-\DoxyCodeLine{322     assert(lst != NULL);}
-\DoxyCodeLine{323     }
-\DoxyCodeLine{324     FILE *dump = fopen(\textcolor{stringliteral}{"ListDump.log"}, \textcolor{stringliteral}{"wb"});}
-\DoxyCodeLine{325     fprintf(dump, \textcolor{stringliteral}{"================== LIST DUMP ==================\(\backslash\)n"}}
-\DoxyCodeLine{326             \textcolor{stringliteral}{"Size       = \%i\(\backslash\)n"}}
-\DoxyCodeLine{327             \textcolor{stringliteral}{"Capacity   = \%i\(\backslash\)n"}}
-\DoxyCodeLine{328             \textcolor{stringliteral}{"Head       = \%i\(\backslash\)n"}}
-\DoxyCodeLine{329             \textcolor{stringliteral}{"Free       = \%i\(\backslash\)n"}}
-\DoxyCodeLine{330             \textcolor{stringliteral}{"Boost Mode = \%i\(\backslash\)n"},}
-\DoxyCodeLine{331             lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}, lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}, lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}});}
-\DoxyCodeLine{332     fprintf(dump,     \textcolor{stringliteral}{"\(\backslash\)nDATA:\(\backslash\)n"}}
-\DoxyCodeLine{333                       \textcolor{stringliteral}{"№    |     value     | next | prev |\(\backslash\)n"});}
-\DoxyCodeLine{334     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
-\DoxyCodeLine{335     \{}
-\DoxyCodeLine{336         fprintf(dump, \textcolor{stringliteral}{"[\%2i] |\%14lli |  \%2i  |  \%2i  |\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
-\DoxyCodeLine{337     \}}
-\DoxyCodeLine{338     fprintf(dump, \textcolor{stringliteral}{"================== THE END ====================\(\backslash\)n"});}
-\DoxyCodeLine{339     }
-\DoxyCodeLine{340     fclose(dump);}
-\DoxyCodeLine{341     }
-\DoxyCodeLine{342     FILE *graph = fopen(\textcolor{stringliteral}{"graph.gv"}, \textcolor{stringliteral}{"wb"});}
-\DoxyCodeLine{343     }
-\DoxyCodeLine{344     fprintf(graph, \textcolor{stringliteral}{"digraph structs \{\(\backslash\)n"}}
-\DoxyCodeLine{345                    \textcolor{stringliteral}{"    node [shape=record];\(\backslash\)n"});}
-\DoxyCodeLine{346     }
-\DoxyCodeLine{347     \textcolor{keyword}{const} \textcolor{keywordtype}{char} * color = NULL;   }
-\DoxyCodeLine{348     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
-\DoxyCodeLine{349     \{   }
-\DoxyCodeLine{350         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} != -\/1)}
-\DoxyCodeLine{351             color = \textcolor{stringliteral}{"\#6659E1"};}
-\DoxyCodeLine{352         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{353             color = \textcolor{stringliteral}{"\#1CAC1C"};}
-\DoxyCodeLine{354         }
-\DoxyCodeLine{355         fprintf(graph,\textcolor{stringliteral}{" struct\_\%i [shape=record, style = filled, fillcolor = \(\backslash\)"\%s\(\backslash\)", "}}
-\DoxyCodeLine{356                       \textcolor{stringliteral}{"label=\(\backslash\)" value = \%i | number\_array = \%i |"}}
-\DoxyCodeLine{357                       \textcolor{stringliteral}{" \{prev = \%i | next = \%i\} \(\backslash\)"];\(\backslash\)n"},}
-\DoxyCodeLine{358                       i, color, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
-\DoxyCodeLine{359     \}               }
-\DoxyCodeLine{360     }
-\DoxyCodeLine{361     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} >= 1)}
-\DoxyCodeLine{362     \{}
-\DoxyCodeLine{363         fprintf(graph, \textcolor{stringliteral}{"struct\_\%i [style = filled, fillcolor = \(\backslash\)"\#E5EF5A\(\backslash\)"];\(\backslash\)n"}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
-\DoxyCodeLine{364         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} >= 2)}
-\DoxyCodeLine{365             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i [style = filled, fillcolor = \(\backslash\)"\#FF353C\(\backslash\)"];\(\backslash\)n"}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
-\DoxyCodeLine{366     \}}
-\DoxyCodeLine{367     }
-\DoxyCodeLine{368     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
-\DoxyCodeLine{369     \{}
-\DoxyCodeLine{370         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
-\DoxyCodeLine{371         \{}
-\DoxyCodeLine{372             \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} != -\/1)}
-\DoxyCodeLine{373                 fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
-\DoxyCodeLine{374         \}}
-\DoxyCodeLine{375         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{376         \{}
-\DoxyCodeLine{377             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
-\DoxyCodeLine{378             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
-\DoxyCodeLine{379         \}}
-\DoxyCodeLine{380     \}}
-\DoxyCodeLine{381     }
-\DoxyCodeLine{382     fprintf(graph, \textcolor{stringliteral}{"\}\(\backslash\)n"});}
-\DoxyCodeLine{383     }
-\DoxyCodeLine{384     fclose(graph);}
-\DoxyCodeLine{385     }
-\DoxyCodeLine{386     system(\textcolor{stringliteral}{"circo -\/Tpdf graph.gv -\/o ListDump.pdf \&\& rm graph.gv"});}
-\DoxyCodeLine{387     }
-\DoxyCodeLine{388     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{389 \}}
+\DoxyCodeLine{311 \{}
+\DoxyCodeLine{312     assert(lst != NULL);}
+\DoxyCodeLine{313     }
+\DoxyCodeLine{314     FILE *dump = fopen(\textcolor{stringliteral}{"ListDump.log"}, \textcolor{stringliteral}{"wb"});}
+\DoxyCodeLine{315     fprintf(dump, \textcolor{stringliteral}{"================== LIST DUMP ==================\(\backslash\)n"}}
+\DoxyCodeLine{316             \textcolor{stringliteral}{"Size       = \%i\(\backslash\)n"}}
+\DoxyCodeLine{317             \textcolor{stringliteral}{"Capacity   = \%i\(\backslash\)n"}}
+\DoxyCodeLine{318             \textcolor{stringliteral}{"Head       = \%i\(\backslash\)n"}}
+\DoxyCodeLine{319             \textcolor{stringliteral}{"Free       = \%i\(\backslash\)n"}}
+\DoxyCodeLine{320             \textcolor{stringliteral}{"Boost Mode = \%i\(\backslash\)n"},}
+\DoxyCodeLine{321             lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}, lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}, lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}});}
+\DoxyCodeLine{322     fprintf(dump,     \textcolor{stringliteral}{"\(\backslash\)nDATA:\(\backslash\)n"}}
+\DoxyCodeLine{323                       \textcolor{stringliteral}{"№    |     value     | next | prev |\(\backslash\)n"});}
+\DoxyCodeLine{324     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
+\DoxyCodeLine{325     \{}
+\DoxyCodeLine{326         fprintf(dump, \textcolor{stringliteral}{"[\%2i] |\%14lli |  \%2i  |  \%2i  |\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
+\DoxyCodeLine{327     \}}
+\DoxyCodeLine{328     fprintf(dump, \textcolor{stringliteral}{"================== THE END ====================\(\backslash\)n"});}
+\DoxyCodeLine{329     }
+\DoxyCodeLine{330     fclose(dump);}
+\DoxyCodeLine{331     }
+\DoxyCodeLine{332     FILE *graph = fopen(\textcolor{stringliteral}{"graph.gv"}, \textcolor{stringliteral}{"wb"});}
+\DoxyCodeLine{333     }
+\DoxyCodeLine{334     fprintf(graph, \textcolor{stringliteral}{"digraph structs \{\(\backslash\)n"}}
+\DoxyCodeLine{335                    \textcolor{stringliteral}{"    node [shape=record];\(\backslash\)n"});}
+\DoxyCodeLine{336     }
+\DoxyCodeLine{337     \textcolor{keyword}{const} \textcolor{keywordtype}{char} * color = NULL;   }
+\DoxyCodeLine{338     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
+\DoxyCodeLine{339     \{   }
+\DoxyCodeLine{340         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} != -\/1)}
+\DoxyCodeLine{341             color = \textcolor{stringliteral}{"\#6659E1"};}
+\DoxyCodeLine{342         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{343             color = \textcolor{stringliteral}{"\#1CAC1C"};}
+\DoxyCodeLine{344         }
+\DoxyCodeLine{345         fprintf(graph,\textcolor{stringliteral}{" struct\_\%i [shape=record, style = filled, fillcolor = \(\backslash\)"\%s\(\backslash\)", "}}
+\DoxyCodeLine{346                       \textcolor{stringliteral}{"label=\(\backslash\)" value = \%i | number\_array = \%i |"}}
+\DoxyCodeLine{347                       \textcolor{stringliteral}{" \{prev = \%i | next = \%i\} \(\backslash\)"];\(\backslash\)n"},}
+\DoxyCodeLine{348                       i, color, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{349     \}               }
+\DoxyCodeLine{350     }
+\DoxyCodeLine{351     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} >= 1)}
+\DoxyCodeLine{352     \{}
+\DoxyCodeLine{353         fprintf(graph, \textcolor{stringliteral}{"struct\_\%i [style = filled, fillcolor = \(\backslash\)"\#E5EF5A\(\backslash\)"];\(\backslash\)n"}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
+\DoxyCodeLine{354         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} >= 2)}
+\DoxyCodeLine{355             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i [style = filled, fillcolor = \(\backslash\)"\#FF353C\(\backslash\)"];\(\backslash\)n"}, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
+\DoxyCodeLine{356     \}}
+\DoxyCodeLine{357     }
+\DoxyCodeLine{358     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i++)}
+\DoxyCodeLine{359     \{}
+\DoxyCodeLine{360         \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
+\DoxyCodeLine{361         \{}
+\DoxyCodeLine{362             \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} != -\/1)}
+\DoxyCodeLine{363                 fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{364         \}}
+\DoxyCodeLine{365         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{366         \{}
+\DoxyCodeLine{367             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{368             fprintf(graph, \textcolor{stringliteral}{"struct\_\%i -\/> struct\_\%i;\(\backslash\)n"}, i, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});}
+\DoxyCodeLine{369         \}}
+\DoxyCodeLine{370     \}}
+\DoxyCodeLine{371     }
+\DoxyCodeLine{372     fprintf(graph, \textcolor{stringliteral}{"\}\(\backslash\)n"});}
+\DoxyCodeLine{373     }
+\DoxyCodeLine{374     fclose(graph);}
+\DoxyCodeLine{375     }
+\DoxyCodeLine{376     system(\textcolor{stringliteral}{"circo -\/Tpdf graph.gv -\/o ListDump.pdf \&\& rm graph.gv"});}
+\DoxyCodeLine{377     }
+\DoxyCodeLine{378     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{379 \}}
 
 \end{DoxyCode}
 
@@ -714,8 +711,7 @@ References List\+::boost\+\_\+mode, List\+::capacity, List\+::data, List\+::free
 
 Referenced by is\+Iterator\+Valid(), and List\+Verify().
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -738,18 +734,18 @@ Iterator of the last element
 \end{DoxyReturn}
 
 
-Definition at line 607 of file list.\+c.
+Definition at line 597 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{608 \{}
-\DoxyCodeLine{609     assert(lst != NULL);}
-\DoxyCodeLine{610     }
-\DoxyCodeLine{611     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{612         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{613     }
-\DoxyCodeLine{614     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{615 \}}
+\DoxyCodeLine{598 \{}
+\DoxyCodeLine{599     assert(lst != NULL);}
+\DoxyCodeLine{600     }
+\DoxyCodeLine{601     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{602         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{603     }
+\DoxyCodeLine{604     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{605 \}}
 
 \end{DoxyCode}
 
@@ -781,37 +777,36 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 679 of file list.\+c.
+Definition at line 669 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{680 \{}
-\DoxyCodeLine{681     assert(lst != NULL);}
-\DoxyCodeLine{682     }
-\DoxyCodeLine{683     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{684         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{685     }
-\DoxyCodeLine{686     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
-\DoxyCodeLine{687         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{688 }
-\DoxyCodeLine{689     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}})}
-\DoxyCodeLine{690         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7}{ListPopBack}}(lst);}
-\DoxyCodeLine{691         }
-\DoxyCodeLine{692     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
-\DoxyCodeLine{693     }
-\DoxyCodeLine{694     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}})}
-\DoxyCodeLine{695         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a9fa41f03d1f4dc775abb9d794364108a}{ListPopFront}}(lst);}
-\DoxyCodeLine{696     }
-\DoxyCodeLine{697     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, iter);}
-\DoxyCodeLine{698 \}}
+\DoxyCodeLine{670 \{}
+\DoxyCodeLine{671     assert(lst != NULL);}
+\DoxyCodeLine{672     }
+\DoxyCodeLine{673     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{674         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{675     }
+\DoxyCodeLine{676     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{677         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}})}
+\DoxyCodeLine{680         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7}{ListPopBack}}(lst);}
+\DoxyCodeLine{681         }
+\DoxyCodeLine{682     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{683     }
+\DoxyCodeLine{684     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}})}
+\DoxyCodeLine{685         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a9fa41f03d1f4dc775abb9d794364108a}{ListPopFront}}(lst);}
+\DoxyCodeLine{686     }
+\DoxyCodeLine{687     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, iter);}
+\DoxyCodeLine{688 \}}
 
 \end{DoxyCode}
 
 
 References List\+::boost\+\_\+mode, List\+::data, List\+::head, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, List\+Erase\+\_\+\+Internal(), List\+Pop\+Back(), List\+Pop\+Front(), List\+Verify(), and Node\+::prev.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -836,50 +831,50 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 233 of file list.\+c.
+Definition at line 223 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{234 \{}
-\DoxyCodeLine{235     assert(lst != NULL);}
-\DoxyCodeLine{236     }
-\DoxyCodeLine{237     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{238         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{239     }
-\DoxyCodeLine{240     \textcolor{keywordflow}{if} (array\_number < 0 || array\_number >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}) }
-\DoxyCodeLine{241         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{242     }
-\DoxyCodeLine{243     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
-\DoxyCodeLine{244         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{245     }
-\DoxyCodeLine{246     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 1)}
-\DoxyCodeLine{247     \{}
-\DoxyCodeLine{248         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
-\DoxyCodeLine{249         }
-\DoxyCodeLine{250         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} dead\_node = \{-\/1, -\/1, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}\};}
-\DoxyCodeLine{251         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number] = dead\_node;}
-\DoxyCodeLine{252         lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = array\_number;}
-\DoxyCodeLine{253         }
-\DoxyCodeLine{254         lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}-\/-\/;}
-\DoxyCodeLine{255         lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
-\DoxyCodeLine{256         }
-\DoxyCodeLine{257         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{258     \}}
+\DoxyCodeLine{224 \{}
+\DoxyCodeLine{225     assert(lst != NULL);}
+\DoxyCodeLine{226     }
+\DoxyCodeLine{227     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{228         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{229     }
+\DoxyCodeLine{230     \textcolor{keywordflow}{if} (array\_number < 0 || array\_number >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}) }
+\DoxyCodeLine{231         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{232     }
+\DoxyCodeLine{233     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1)}
+\DoxyCodeLine{234         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{235     }
+\DoxyCodeLine{236     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 1)}
+\DoxyCodeLine{237     \{}
+\DoxyCodeLine{238         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = -\/1;}
+\DoxyCodeLine{239         }
+\DoxyCodeLine{240         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} dead\_node = \{-\/1, -\/1, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}\};}
+\DoxyCodeLine{241         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number] = dead\_node;}
+\DoxyCodeLine{242         lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = array\_number;}
+\DoxyCodeLine{243         }
+\DoxyCodeLine{244         lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}-\/-\/;}
+\DoxyCodeLine{245         lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{246         }
+\DoxyCodeLine{247         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{248     \}}
+\DoxyCodeLine{249     }
+\DoxyCodeLine{250     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} == array\_number)}
+\DoxyCodeLine{251         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{252     }
+\DoxyCodeLine{253     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{254     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{255     }
+\DoxyCodeLine{256     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} dead\_node = \{-\/1, -\/1, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}\};}
+\DoxyCodeLine{257     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number] = dead\_node;}
+\DoxyCodeLine{258     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = array\_number;}
 \DoxyCodeLine{259     }
-\DoxyCodeLine{260     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} == array\_number)}
-\DoxyCodeLine{261         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{262     }
-\DoxyCodeLine{263     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{264     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{265     }
-\DoxyCodeLine{266     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} dead\_node = \{-\/1, -\/1, lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}}\};}
-\DoxyCodeLine{267     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number] = dead\_node;}
-\DoxyCodeLine{268     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = array\_number;}
-\DoxyCodeLine{269     }
-\DoxyCodeLine{270     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}-\/-\/;}
-\DoxyCodeLine{271     }
-\DoxyCodeLine{272     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{273 \}}
+\DoxyCodeLine{260     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}-\/-\/;}
+\DoxyCodeLine{261     }
+\DoxyCodeLine{262     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{263 \}}
 
 \end{DoxyCode}
 
@@ -897,8 +892,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{list_8c_a957ee1a520cba2eb92b8551ac42f57e5_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -923,29 +917,28 @@ Value of the element or -\/1 if there\textquotesingle{}s something wrong
 \end{DoxyReturn}
 
 
-Definition at line 584 of file list.\+c.
+Definition at line 574 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{585 \{}
-\DoxyCodeLine{586     assert(lst != NULL);}
-\DoxyCodeLine{587     }
-\DoxyCodeLine{588     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{589         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{590         }
-\DoxyCodeLine{591     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
-\DoxyCodeLine{592         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}};}
-\DoxyCodeLine{593     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{594         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{595 \}}
+\DoxyCodeLine{575 \{}
+\DoxyCodeLine{576     assert(lst != NULL);}
+\DoxyCodeLine{577     }
+\DoxyCodeLine{578     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{579         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{580         }
+\DoxyCodeLine{581     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{582         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a4ef969fbc36a08289a065ee4e66fdf4f}{value}};}
+\DoxyCodeLine{583     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{584         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{585 \}}
 
 \end{DoxyCode}
 
 
 References List\+::data, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Verify(), and Node\+::value.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -972,51 +965,51 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 190 of file list.\+c.
+Definition at line 180 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{191 \{}
-\DoxyCodeLine{192     assert(lst != NULL);}
-\DoxyCodeLine{193     }
-\DoxyCodeLine{194     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{195         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{196     }
-\DoxyCodeLine{197     \textcolor{keywordflow}{if} (array\_number < 0 || array\_number >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}})       }
-\DoxyCodeLine{198         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcab93fe2b2fc77331606efc674399a1525}{LIST\_WRONG\_INDEX}};}
-\DoxyCodeLine{199     }
-\DoxyCodeLine{200     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1 \&\& !(lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0 \&\& array\_number == 0))}
-\DoxyCodeLine{201         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcab93fe2b2fc77331606efc674399a1525}{LIST\_WRONG\_INDEX}};}
-\DoxyCodeLine{202     }
-\DoxyCodeLine{203     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} == lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
-\DoxyCodeLine{204     \{}
-\DoxyCodeLine{205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}{ListResize}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} * 2) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{206             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
-\DoxyCodeLine{207     \}}
-\DoxyCodeLine{208     }
-\DoxyCodeLine{209     \textcolor{keywordtype}{int} free\_tmp = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
-\DoxyCodeLine{210     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[free\_tmp].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};                    }
+\DoxyCodeLine{181 \{}
+\DoxyCodeLine{182     assert(lst != NULL);}
+\DoxyCodeLine{183     }
+\DoxyCodeLine{184     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{185         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{186     }
+\DoxyCodeLine{187     \textcolor{keywordflow}{if} (array\_number < 0 || array\_number >= lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}})       }
+\DoxyCodeLine{188         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcab93fe2b2fc77331606efc674399a1525}{LIST\_WRONG\_INDEX}};}
+\DoxyCodeLine{189     }
+\DoxyCodeLine{190     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} == -\/1 \&\& !(lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0 \&\& array\_number == 0))}
+\DoxyCodeLine{191         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcab93fe2b2fc77331606efc674399a1525}{LIST\_WRONG\_INDEX}};}
+\DoxyCodeLine{192     }
+\DoxyCodeLine{193     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} == lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{194     \{}
+\DoxyCodeLine{195         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}{ListResize}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} * 2) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{196             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
+\DoxyCodeLine{197     \}}
+\DoxyCodeLine{198     }
+\DoxyCodeLine{199     \textcolor{keywordtype}{int} free\_tmp = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
+\DoxyCodeLine{200     lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[free\_tmp].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};                    }
+\DoxyCodeLine{201     }
+\DoxyCodeLine{202     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{203     \{   }
+\DoxyCodeLine{204         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = free\_tmp;}
+\DoxyCodeLine{205         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} new\_node = \{x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}\};}
+\DoxyCodeLine{206         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}] = new\_node;}
+\DoxyCodeLine{207         }
+\DoxyCodeLine{208         lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}++;}
+\DoxyCodeLine{209         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{210     \}}
 \DoxyCodeLine{211     }
-\DoxyCodeLine{212     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
-\DoxyCodeLine{213     \{   }
-\DoxyCodeLine{214         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = free\_tmp;}
-\DoxyCodeLine{215         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} new\_node = \{x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}\};}
-\DoxyCodeLine{216         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}] = new\_node;}
+\DoxyCodeLine{212     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} new\_node = \{x, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}, array\_number\};}
+\DoxyCodeLine{213     }
+\DoxyCodeLine{214     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[free\_tmp] = new\_node;}
+\DoxyCodeLine{215     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_node.\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = free\_tmp;}
+\DoxyCodeLine{216     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_node.\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} = free\_tmp;}
 \DoxyCodeLine{217         }
-\DoxyCodeLine{218         lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}++;}
-\DoxyCodeLine{219         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{220     \}}
-\DoxyCodeLine{221     }
-\DoxyCodeLine{222     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} new\_node = \{x, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[array\_number].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}, array\_number\};}
-\DoxyCodeLine{223     }
-\DoxyCodeLine{224     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[free\_tmp] = new\_node;}
-\DoxyCodeLine{225     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_node.\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = free\_tmp;}
-\DoxyCodeLine{226     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_node.\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}} = free\_tmp;}
-\DoxyCodeLine{227         }
-\DoxyCodeLine{228     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}++;}
-\DoxyCodeLine{229     }
-\DoxyCodeLine{230     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{231 \}}
+\DoxyCodeLine{218     lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}}++;}
+\DoxyCodeLine{219     }
+\DoxyCodeLine{220     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{221 \}}
 
 \end{DoxyCode}
 
@@ -1034,8 +1027,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{list_8c_a2f513993aacfccc7af38c69434589a40_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1062,33 +1054,32 @@ Iterator of new inserted element
 \end{DoxyReturn}
 
 
-Definition at line 662 of file list.\+c.
+Definition at line 652 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{663 \{}
-\DoxyCodeLine{664     assert(lst != NULL);}
-\DoxyCodeLine{665     }
-\DoxyCodeLine{666     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{667         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{668     }
-\DoxyCodeLine{669     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
-\DoxyCodeLine{670         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{671         }
-\DoxyCodeLine{672     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}})}
-\DoxyCodeLine{673         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a7c5ff601bc85471b4148a1c4c15787ae}{ListPushBack}}(lst, x);}
-\DoxyCodeLine{674     }
-\DoxyCodeLine{675     \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
-\DoxyCodeLine{676     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{677 \}}
+\DoxyCodeLine{653 \{}
+\DoxyCodeLine{654     assert(lst != NULL);}
+\DoxyCodeLine{655     }
+\DoxyCodeLine{656     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{657         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{658     }
+\DoxyCodeLine{659     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{660         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{661         }
+\DoxyCodeLine{662     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}})}
+\DoxyCodeLine{663         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a7c5ff601bc85471b4148a1c4c15787ae}{ListPushBack}}(lst, x);}
+\DoxyCodeLine{664     }
+\DoxyCodeLine{665     \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}});}
+\DoxyCodeLine{666     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{667 \}}
 
 \end{DoxyCode}
 
 
 References List\+::data, List\+::head, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Insert\+\_\+\+Internal(), List\+Push\+Back(), List\+Verify(), Node\+::next, and Node\+::prev.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1115,35 +1106,34 @@ Iterator of new inserted element
 \end{DoxyReturn}
 
 
-Definition at line 643 of file list.\+c.
+Definition at line 633 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{644 \{}
-\DoxyCodeLine{645     assert(lst != NULL);}
-\DoxyCodeLine{646     }
-\DoxyCodeLine{647     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{648         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{649     }
-\DoxyCodeLine{650     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
-\DoxyCodeLine{651         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{652     }
-\DoxyCodeLine{653     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
-\DoxyCodeLine{654     }
-\DoxyCodeLine{655     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}})}
-\DoxyCodeLine{656         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_afe4e636b84899e781aae6af9456fd88d}{ListPushFront}}(lst, x);}
-\DoxyCodeLine{657     }
-\DoxyCodeLine{658     \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, iter);}
-\DoxyCodeLine{659     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{660 \}  }
+\DoxyCodeLine{634 \{}
+\DoxyCodeLine{635     assert(lst != NULL);}
+\DoxyCodeLine{636     }
+\DoxyCodeLine{637     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{638         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{639     }
+\DoxyCodeLine{640     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{list_8c_adfd8599d25d547782ffb93f50313c092}{isIteratorValid}}(lst, iter))}
+\DoxyCodeLine{641         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{642     }
+\DoxyCodeLine{643     lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{644     }
+\DoxyCodeLine{645     \textcolor{keywordflow}{if} (iter == lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}})}
+\DoxyCodeLine{646         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_afe4e636b84899e781aae6af9456fd88d}{ListPushFront}}(lst, x);}
+\DoxyCodeLine{647     }
+\DoxyCodeLine{648     \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, iter);}
+\DoxyCodeLine{649     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[iter].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{650 \}  }
 
 \end{DoxyCode}
 
 
 References List\+::boost\+\_\+mode, List\+::data, List\+::head, is\+Iterator\+Valid(), L\+I\+S\+T\+\_\+\+OK, List\+Insert\+\_\+\+Internal(), List\+Push\+Front(), List\+Verify(), and Node\+::prev.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1166,21 +1156,21 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 492 of file list.\+c.
+Definition at line 482 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{493 \{}
-\DoxyCodeLine{494     assert(lst != NULL);}
-\DoxyCodeLine{495     }
-\DoxyCodeLine{496     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{497         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{498     }
-\DoxyCodeLine{499     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
-\DoxyCodeLine{500         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{501     }
-\DoxyCodeLine{502     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});    }
-\DoxyCodeLine{503 \}}
+\DoxyCodeLine{483 \{}
+\DoxyCodeLine{484     assert(lst != NULL);}
+\DoxyCodeLine{485     }
+\DoxyCodeLine{486     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{487         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{488     }
+\DoxyCodeLine{489     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{490         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{491     }
+\DoxyCodeLine{492     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}});    }
+\DoxyCodeLine{493 \}}
 
 \end{DoxyCode}
 
@@ -1198,8 +1188,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{list_8c_ac485b4349fbeff1dc2565e7cd88a83d7_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1222,23 +1211,23 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 505 of file list.\+c.
+Definition at line 495 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{506 \{}
-\DoxyCodeLine{507     assert(lst != NULL);}
-\DoxyCodeLine{508     }
-\DoxyCodeLine{509     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{510         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{511     }
-\DoxyCodeLine{512     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
-\DoxyCodeLine{513         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{514     }
-\DoxyCodeLine{515     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1) lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
-\DoxyCodeLine{516     }
-\DoxyCodeLine{517     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});  }
-\DoxyCodeLine{518 \}}
+\DoxyCodeLine{496 \{}
+\DoxyCodeLine{497     assert(lst != NULL);}
+\DoxyCodeLine{498     }
+\DoxyCodeLine{499     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{500         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{501     }
+\DoxyCodeLine{502     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} == 0)}
+\DoxyCodeLine{503         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{504     }
+\DoxyCodeLine{505     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1) lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{506     }
+\DoxyCodeLine{507     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a957ee1a520cba2eb92b8551ac42f57e5}{ListErase\_Internal}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});  }
+\DoxyCodeLine{508 \}}
 
 \end{DoxyCode}
 
@@ -1256,8 +1245,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{list_8c_a9fa41f03d1f4dc775abb9d794364108a_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1282,31 +1270,31 @@ Iterator of the element x in list
 \end{DoxyReturn}
 
 
-Definition at line 444 of file list.\+c.
+Definition at line 434 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{445 \{}
-\DoxyCodeLine{446     assert(lst != NULL);}
-\DoxyCodeLine{447         }
-\DoxyCodeLine{448     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{449         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{450             }
-\DoxyCodeLine{451     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > 0)}
-\DoxyCodeLine{452     \{}
-\DoxyCodeLine{453         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}) == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{454             \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{455         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{456             \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{457     \}}
-\DoxyCodeLine{458     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{459     \{}
-\DoxyCodeLine{460         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, 0) == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{461             \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
-\DoxyCodeLine{462         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{463             \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{464     \}}
-\DoxyCodeLine{465 \}}
+\DoxyCodeLine{435 \{}
+\DoxyCodeLine{436     assert(lst != NULL);}
+\DoxyCodeLine{437         }
+\DoxyCodeLine{438     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{439         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{440             }
+\DoxyCodeLine{441     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > 0)}
+\DoxyCodeLine{442     \{}
+\DoxyCodeLine{443         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}) == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{444             \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{445         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{446             \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{447     \}}
+\DoxyCodeLine{448     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{449     \{}
+\DoxyCodeLine{450         \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, 0) == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{451             \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{452         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{453             \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{454     \}}
+\DoxyCodeLine{455 \}}
 
 \end{DoxyCode}
 
@@ -1324,8 +1312,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{list_8c_a7c5ff601bc85471b4148a1c4c15787ae_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1350,33 +1337,33 @@ Iterator of the element x in list
 \end{DoxyReturn}
 
 
-Definition at line 467 of file list.\+c.
+Definition at line 457 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{468 \{}
-\DoxyCodeLine{469     assert(lst != NULL);}
-\DoxyCodeLine{470     }
-\DoxyCodeLine{471     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{472         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{473     }
-\DoxyCodeLine{474     \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\_error}} check = \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{475 }
-\DoxyCodeLine{476     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1) lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
-\DoxyCodeLine{477     }
-\DoxyCodeLine{478     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > 0)}
-\DoxyCodeLine{479         check = \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
-\DoxyCodeLine{480     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{481         check = \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, 0);}
-\DoxyCodeLine{482     }
-\DoxyCodeLine{483     \textcolor{keywordflow}{if} (check == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{484     \{}
-\DoxyCodeLine{485         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{486         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
-\DoxyCodeLine{487     \}}
-\DoxyCodeLine{488     \textcolor{keywordflow}{else} }
-\DoxyCodeLine{489         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{490 \}}
+\DoxyCodeLine{458 \{}
+\DoxyCodeLine{459     assert(lst != NULL);}
+\DoxyCodeLine{460     }
+\DoxyCodeLine{461     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{462         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{463     }
+\DoxyCodeLine{464     \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\_error}} check = \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1) lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} = 0;}
+\DoxyCodeLine{467     }
+\DoxyCodeLine{468     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > 0)}
+\DoxyCodeLine{469         check = \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}});}
+\DoxyCodeLine{470     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{471         check = \mbox{\hyperlink{list_8c_a2f513993aacfccc7af38c69434589a40}{ListInsert\_Internal}}(lst, x, 0);}
+\DoxyCodeLine{472     }
+\DoxyCodeLine{473     \textcolor{keywordflow}{if} (check == \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{474     \{}
+\DoxyCodeLine{475         lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{476         \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}};}
+\DoxyCodeLine{477     \}}
+\DoxyCodeLine{478     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{479         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{480 \}}
 
 \end{DoxyCode}
 
@@ -1394,8 +1381,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{list_8c_afe4e636b84899e781aae6af9456fd88d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1420,55 +1406,55 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 143 of file list.\+c.
+Definition at line 133 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{144 \{}
-\DoxyCodeLine{145     assert(lst != NULL);}
+\DoxyCodeLine{134 \{}
+\DoxyCodeLine{135     assert(lst != NULL);}
+\DoxyCodeLine{136     }
+\DoxyCodeLine{137     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{138         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{139         }
+\DoxyCodeLine{140     \textcolor{keywordflow}{if} (new\_cap < lst-\/>size || }
+\DoxyCodeLine{141        (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 0 \&\& new\_cap <= lst-\/>capacity) || }
+\DoxyCodeLine{142        (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1 \&\& new\_cap < lst-\/>size))}
+\DoxyCodeLine{143         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}}; }
+\DoxyCodeLine{144     }
+\DoxyCodeLine{145     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *new\_data = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)realloc(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}, new\_cap * \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
 \DoxyCodeLine{146     }
-\DoxyCodeLine{147     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{148         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{149         }
-\DoxyCodeLine{150     \textcolor{keywordflow}{if} (new\_cap < lst-\/>size || }
-\DoxyCodeLine{151        (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 0 \&\& new\_cap <= lst-\/>capacity) || }
-\DoxyCodeLine{152        (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1 \&\& new\_cap < lst-\/>size))}
-\DoxyCodeLine{153         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}}; }
-\DoxyCodeLine{154     }
-\DoxyCodeLine{155     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *new\_data = (\textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} *)realloc(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}, new\_cap * \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{list_8h_structNode}{Node}}));}
-\DoxyCodeLine{156     }
-\DoxyCodeLine{157     \textcolor{keywordflow}{if} (new\_data == NULL)}
-\DoxyCodeLine{158         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
-\DoxyCodeLine{159     }
-\DoxyCodeLine{160     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = new\_data;}
-\DoxyCodeLine{161     }
-\DoxyCodeLine{162     \textcolor{keywordflow}{if} (new\_cap == lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
-\DoxyCodeLine{163     \{}
-\DoxyCodeLine{164         lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = new\_cap;}
-\DoxyCodeLine{165         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{166     \}}
-\DoxyCodeLine{167     }
-\DoxyCodeLine{168     \textcolor{keywordtype}{int} last\_free = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
-\DoxyCodeLine{169     \textcolor{keywordflow}{if} (last\_free == -\/1)}
-\DoxyCodeLine{170         lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}};}
-\DoxyCodeLine{171     \textcolor{keywordflow}{else}    }
-\DoxyCodeLine{172     \{}
-\DoxyCodeLine{173         \textcolor{keywordflow}{while}(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} != -\/1)}
-\DoxyCodeLine{174             last\_free = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{147     \textcolor{keywordflow}{if} (new\_data == NULL)}
+\DoxyCodeLine{148         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca5553babcb216582b77f2381f13177d29}{LIST\_WRONG\_REALLOC}};}
+\DoxyCodeLine{149     }
+\DoxyCodeLine{150     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} = new\_data;}
+\DoxyCodeLine{151     }
+\DoxyCodeLine{152     \textcolor{keywordflow}{if} (new\_cap == lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{153     \{}
+\DoxyCodeLine{154         lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = new\_cap;}
+\DoxyCodeLine{155         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{156     \}}
+\DoxyCodeLine{157     }
+\DoxyCodeLine{158     \textcolor{keywordtype}{int} last\_free = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
+\DoxyCodeLine{159     \textcolor{keywordflow}{if} (last\_free == -\/1)}
+\DoxyCodeLine{160         lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}};}
+\DoxyCodeLine{161     \textcolor{keywordflow}{else}    }
+\DoxyCodeLine{162     \{}
+\DoxyCodeLine{163         \textcolor{keywordflow}{while}(lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} != -\/1)}
+\DoxyCodeLine{164             last\_free = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{165         }
+\DoxyCodeLine{166         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}};}
+\DoxyCodeLine{167     \}}
+\DoxyCodeLine{168     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i < new\_cap -\/ 1; i++)}
+\DoxyCodeLine{169     \{}
+\DoxyCodeLine{170         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} free\_node = \{-\/1, -\/1, i + 1\};}
+\DoxyCodeLine{171         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i] = free\_node;}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} last\_node = \{-\/1, -\/1, -\/1\};}
+\DoxyCodeLine{174     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_cap -\/ 1] = last\_node;}
 \DoxyCodeLine{175         }
-\DoxyCodeLine{176         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[last\_free].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}} = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}};}
-\DoxyCodeLine{177     \}}
-\DoxyCodeLine{178     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}}; i < new\_cap -\/ 1; i++)}
-\DoxyCodeLine{179     \{}
-\DoxyCodeLine{180         \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} free\_node = \{-\/1, -\/1, i + 1\};}
-\DoxyCodeLine{181         lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[i] = free\_node;}
-\DoxyCodeLine{182     \}}
-\DoxyCodeLine{183     \textcolor{keyword}{struct }\mbox{\hyperlink{list_8h_structNode}{Node}} last\_node = \{-\/1, -\/1, -\/1\};}
-\DoxyCodeLine{184     lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[new\_cap -\/ 1] = last\_node;}
-\DoxyCodeLine{185         }
-\DoxyCodeLine{186     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = new\_cap;}
-\DoxyCodeLine{187     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{188 \}}
+\DoxyCodeLine{176     lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} = new\_cap;}
+\DoxyCodeLine{177     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{178 \}}
 
 \end{DoxyCode}
 
@@ -1486,8 +1472,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=343pt]{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1510,21 +1495,21 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another code if there\textqu
 \end{DoxyReturn}
 
 
-Definition at line 431 of file list.\+c.
+Definition at line 421 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{432 \{}
-\DoxyCodeLine{433     assert(lst != NULL);}
-\DoxyCodeLine{434     }
-\DoxyCodeLine{435     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{436         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{437     }
-\DoxyCodeLine{438     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
-\DoxyCodeLine{439         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}{ListResize}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}});}
-\DoxyCodeLine{440     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{441         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
-\DoxyCodeLine{442 \}}
+\DoxyCodeLine{422 \{}
+\DoxyCodeLine{423     assert(lst != NULL);}
+\DoxyCodeLine{424     }
+\DoxyCodeLine{425     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{426         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{427     }
+\DoxyCodeLine{428     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_aed9f50ce423511f855595888a9ad58dd}{boost\_mode}} == 1)}
+\DoxyCodeLine{429         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8c_a5b2989c7bbbdf21204e9a6e9b92ed1dc}{ListResize}}(lst, lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}});}
+\DoxyCodeLine{430     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{431         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{432 \}}
 
 \end{DoxyCode}
 
@@ -1554,18 +1539,18 @@ Size of the list
 \end{DoxyReturn}
 
 
-Definition at line 520 of file list.\+c.
+Definition at line 510 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{521 \{}
-\DoxyCodeLine{522     assert(lst != NULL);}
-\DoxyCodeLine{523     }
-\DoxyCodeLine{524     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
-\DoxyCodeLine{525         \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{526     }
-\DoxyCodeLine{527     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
-\DoxyCodeLine{528 \}}
+\DoxyCodeLine{511 \{}
+\DoxyCodeLine{512     assert(lst != NULL);}
+\DoxyCodeLine{513     }
+\DoxyCodeLine{514     \textcolor{keywordflow}{if} (\mbox{\hyperlink{list_8c_a262ea758423a46a6ca0ff4e722e895b5}{ListVerify}}(lst) != \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}})}
+\DoxyCodeLine{515         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{516     }
+\DoxyCodeLine{517     \textcolor{keywordflow}{return} lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}};}
+\DoxyCodeLine{518 \}}
 
 \end{DoxyCode}
 
@@ -1585,8 +1570,6 @@ Here is the call graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{ListVerify()}{ListVerify()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{list_8h_a444c8b6f66c09090f4e8d90169d43633}{List\+\_\+error}} List\+Verify (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{list_8h_structList}{List}} $\ast$}]{lst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-T\+O\+DO\+: documentation for Isert\+After and Get\+Iterator
-
 Verify function list 
 \begin{DoxyParams}{Parameters}
 {\em lst} & Object \mbox{\hyperlink{list_8h_structList}{List}} which need to verify \\
@@ -1597,82 +1580,77 @@ Code of verify. L\+I\+S\+T\+\_\+\+OK if list OK, or another error if list bad
 \end{DoxyReturn}
 
 
-Definition at line 57 of file list.\+c.
+Definition at line 52 of file list.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{58 \{}
-\DoxyCodeLine{59     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} == NULL)}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}} == NULL)}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         printf(\textcolor{stringliteral}{"Error in list because pointer to data == NULL\(\backslash\)n"});}
+\DoxyCodeLine{57         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}})}
 \DoxyCodeLine{60     \{}
-\DoxyCodeLine{61         printf(\textcolor{stringliteral}{"Ban because lst-\/data == NULL\(\backslash\)n"});}
-\DoxyCodeLine{62         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca67c1787aedb6c22095832b9d88e0675e}{LIST\_ERROR}};}
+\DoxyCodeLine{61         printf(\textcolor{stringliteral}{"Error in list because of overflow\(\backslash\)n"});}
+\DoxyCodeLine{62         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca7921e77a9c53d33fbbb4409623ded699}{LIST\_OVERFLOW}};}
 \DoxyCodeLine{63     \}}
-\DoxyCodeLine{64     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} > lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}})}
-\DoxyCodeLine{65     \{}
-\DoxyCodeLine{66         printf(\textcolor{stringliteral}{"Ban because of overflow\(\backslash\)n"});}
-\DoxyCodeLine{67         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca7921e77a9c53d33fbbb4409623ded699}{LIST\_OVERFLOW}};}
-\DoxyCodeLine{68     \}}
-\DoxyCodeLine{69     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}} < 0)}
-\DoxyCodeLine{70     \{}
-\DoxyCodeLine{71         printf(\textcolor{stringliteral}{"Ban because of underflow\(\backslash\)n"});}
-\DoxyCodeLine{72         \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdcaa86b10fc0170e78943b601ea3a0dd031}{LIST\_UNDERFLOW}};}
-\DoxyCodeLine{73     \}}
-\DoxyCodeLine{74     }
-\DoxyCodeLine{75 \textcolor{preprocessor}{    \#ifdef DEBUG\_MODE}}
-\DoxyCodeLine{76     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} != -\/1)}
-\DoxyCodeLine{77     \{}
-\DoxyCodeLine{78         \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{79         \textcolor{keywordtype}{int} logic\_number = 1;}
-\DoxyCodeLine{80         \textcolor{keywordflow}{while} (curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} \&\& logic\_number < lst-\/>size)}
-\DoxyCodeLine{81         \{}
-\DoxyCodeLine{82             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{83             logic\_number++;}
-\DoxyCodeLine{84         \}}
-\DoxyCodeLine{85         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
-\DoxyCodeLine{86         \{}
-\DoxyCodeLine{87             printf(\textcolor{stringliteral}{"There's cycle in upstream way\(\backslash\)n"});}
-\DoxyCodeLine{88             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
-\DoxyCodeLine{89             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
-\DoxyCodeLine{90         \}}
-\DoxyCodeLine{91         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{92         logic\_number = 1;}
-\DoxyCodeLine{93         \textcolor{keywordflow}{while} (curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} \&\& logic\_number < lst-\/>size)}
-\DoxyCodeLine{94         \{}
-\DoxyCodeLine{95             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
-\DoxyCodeLine{96             logic\_number++;}
-\DoxyCodeLine{97         \}}
-\DoxyCodeLine{98         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
-\DoxyCodeLine{99         \{}
-\DoxyCodeLine{100             printf(\textcolor{stringliteral}{"There's cycle in reverse way\(\backslash\)n"});}
-\DoxyCodeLine{101             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
-\DoxyCodeLine{102             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65 \textcolor{preprocessor}{    \#ifdef DEBUG\_MODE}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} != -\/1)}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68         \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{69         \textcolor{keywordtype}{int} logic\_number = 1;}
+\DoxyCodeLine{70         \textcolor{keywordflow}{while} (curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} \&\& logic\_number < lst-\/>size)}
+\DoxyCodeLine{71         \{}
+\DoxyCodeLine{72             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{73             logic\_number++;}
+\DoxyCodeLine{74         \}}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{76         \{}
+\DoxyCodeLine{77             printf(\textcolor{stringliteral}{"There's cycle in upstream way\(\backslash\)n"});}
+\DoxyCodeLine{78             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{79             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
+\DoxyCodeLine{80         \}}
+\DoxyCodeLine{81         curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}}].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{82         logic\_number = 1;}
+\DoxyCodeLine{83         \textcolor{keywordflow}{while} (curr\_node != lst-\/>\mbox{\hyperlink{list_8h_a949a322159641779197217b98b7d5638}{head}} \&\& logic\_number < lst-\/>size)}
+\DoxyCodeLine{84         \{}
+\DoxyCodeLine{85             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a35f1b86fda1f3ffef459c905bbcefe55}{prev}};}
+\DoxyCodeLine{86             logic\_number++;}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{89         \{}
+\DoxyCodeLine{90             printf(\textcolor{stringliteral}{"There's cycle in reverse way\(\backslash\)n"});}
+\DoxyCodeLine{91             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{92             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} != -\/1)}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97         \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
+\DoxyCodeLine{98         \textcolor{keywordtype}{int} logic\_number = 0;}
+\DoxyCodeLine{99         \textcolor{keywordflow}{while} (curr\_node != -\/1 \&\& logic\_number < lst-\/>capacity -\/ lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{100         \{}
+\DoxyCodeLine{101             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
+\DoxyCodeLine{102             logic\_number++;    }
 \DoxyCodeLine{103         \}}
-\DoxyCodeLine{104     \}}
-\DoxyCodeLine{105     \textcolor{keywordflow}{if} (lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}} != -\/1)}
-\DoxyCodeLine{106     \{}
-\DoxyCodeLine{107         \textcolor{keywordtype}{int} curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a20b69258791de3df024d65e784a344b3}{free}};}
-\DoxyCodeLine{108         \textcolor{keywordtype}{int} logic\_number = 0;}
-\DoxyCodeLine{109         \textcolor{keywordflow}{while} (curr\_node != -\/1 \&\& logic\_number < lst-\/>capacity -\/ lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
-\DoxyCodeLine{110         \{}
-\DoxyCodeLine{111             curr\_node = lst-\/>\mbox{\hyperlink{list_8h_a3cca320d1da0508514539ab1f7b57d1f}{data}}[curr\_node].\mbox{\hyperlink{list_8h_a59655ffaadbb779247b2bb65100473e0}{next}};}
-\DoxyCodeLine{112             logic\_number++;    }
-\DoxyCodeLine{113         \}}
-\DoxyCodeLine{114         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} -\/ lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
-\DoxyCodeLine{115         \{}
-\DoxyCodeLine{116             printf(\textcolor{stringliteral}{"There's cycle in free places\(\backslash\)n"});}
-\DoxyCodeLine{117             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
-\DoxyCodeLine{118             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
-\DoxyCodeLine{119         \}}
-\DoxyCodeLine{120     \}}
-\DoxyCodeLine{121 \textcolor{preprocessor}{    \#endif}}
-\DoxyCodeLine{122     }
-\DoxyCodeLine{123     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
-\DoxyCodeLine{124 \}}
+\DoxyCodeLine{104         \textcolor{keywordflow}{if} (logic\_number != lst-\/>\mbox{\hyperlink{list_8h_a12bdafe0a9c351d57e7c4222a2725d41}{capacity}} -\/ lst-\/>\mbox{\hyperlink{list_8h_a166530a166abd81afec0e6b0283f7e80}{size}})}
+\DoxyCodeLine{105         \{}
+\DoxyCodeLine{106             printf(\textcolor{stringliteral}{"There's cycle in free places\(\backslash\)n"});}
+\DoxyCodeLine{107             \mbox{\hyperlink{list_8c_adb5a6d3f693d0b150af95fa5a131ed0b}{ListDump}}(lst);}
+\DoxyCodeLine{108             \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca58ea37b2d13cd49c2072c5a946a58d5a}{LIST\_CYCLE}};}
+\DoxyCodeLine{109         \}}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113     \textcolor{keywordflow}{return} \mbox{\hyperlink{list_8h_af6f8c690d9e94e6f4c9319af9950cbdca918f6a1af240ad9b362d03c58ceff6dc}{LIST\_OK}};}
+\DoxyCodeLine{114 \}}
 
 \end{DoxyCode}
 
 
-References List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+C\+Y\+C\+LE, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, L\+I\+S\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW, L\+I\+S\+T\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW, List\+Dump(), Node\+::next, Node\+::prev, and List\+::size.
+References List\+::capacity, List\+::data, List\+::free, List\+::head, L\+I\+S\+T\+\_\+\+C\+Y\+C\+LE, L\+I\+S\+T\+\_\+\+E\+R\+R\+OR, L\+I\+S\+T\+\_\+\+OK, L\+I\+S\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW, List\+Dump(), Node\+::next, Node\+::prev, and List\+::size.
 
 
 
@@ -1685,8 +1663,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=241pt]{list_8c_a262ea758423a46a6ca0ff4e722e895b5_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

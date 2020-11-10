@@ -53,18 +53,13 @@ static List_error ListVerify(struct List *lst)
 {
     if (lst->data == NULL)
     {
-        printf("Ban because lst-data == NULL\n");
+        printf("Error in list because pointer to data == NULL\n");
         return LIST_ERROR;
     }
     if (lst->size > lst->capacity)
     {
-        printf("Ban because of overflow\n");
+        printf("Error in list because of overflow\n");
         return LIST_OVERFLOW;
-    }
-    if (lst->size < 0)
-    {
-        printf("Ban because of underflow\n");
-        return LIST_UNDERFLOW;
     }
     
     #ifdef DEBUG_MODE
